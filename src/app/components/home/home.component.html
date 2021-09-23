@@ -1,0 +1,162 @@
+<app-nav [breadcrumb]="currentbreadcrumb"></app-nav>
+<section class="home-sec2 bg-blue mb-80">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="doner flex justify-content-between align-items-center">
+          <div>
+            <p class="color-pri">Make a Donation</p>
+            <h4>Become a Doner</h4>
+          </div>
+          <form
+            [formGroup]="makeDonationForm"
+            class="form-container donation-form flex justify-content-between"
+            (ngSubmit)="sendDonar()"
+          >
+            <mat-form-field appearance="outline">
+              <mat-label>Donar Name</mat-label>
+
+              <input
+                formControlName="name"
+                matInput=""
+                placeholder="Donar Name"
+                type="text" required
+              />
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Enter Your Email</mat-label>
+
+              <input
+                formControlName="email"
+                matInput=""
+                 pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}" type="email"  required
+                placeholder="Enter Your Email"
+              />
+            </mat-form-field>
+
+            <button type="submit" [disabled]="!makeDonationForm.valid">Make A Donation</button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="home-sec3 align-items-md-start mb-80">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-sm-12">
+        <h2>About us</h2>
+        <h4 class="text-capitalize color-sec mb-40">
+        {{homeStaticData.AboutUsSection.title}}
+        </h4>
+
+        <p>
+          {{homeStaticData.AboutUsSection.body}}
+
+        </p>
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <img src="../../../assets/images/Home/Group 41.png" />
+        <div class="flex">
+          <img src="../../../assets/images/Home/Group 39.png" />
+          <img src="../../../assets/images/Home/Group 40.png" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="home-sec4 mb-40">
+  <div class="container">
+    <div class="row">
+      <h2 class="text-center">Last achievemnt</h2>
+
+      <div>
+        <div>
+          <div>
+            <img src="../../../assets/images/achievement/nico-smit-NFoerQuvzrs-unsplash.png" />
+            <h4>How we fight to have agreat world</h4>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
+              doloribus rerum recusandae deserunt obcaecati atque architecto
+              reiciendis!
+            </p>
+            <a>See More</a>
+          </div>
+          <div>
+            <img src="../../../assets/images/achievement/tanjir-ahmed-chowdhury-Nem1BLADG4c-unsplash.png" />
+            <h4>How we fight to have agreat world</h4>
+
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
+              doloribus rerum recusandae deserunt obcaecati atque architecto
+              reiciendis!
+            </p>
+            <a>See More</a>
+          </div>
+          <div>
+            <img src="../../../assets/images/achievement/tim-mossholder-vTA2Het76y8-unsplash.png" />
+            <h4>How we fight to have agreat world</h4>
+
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
+              doloribus rerum recusandae deserunt obcaecati atque architecto
+              reiciendis!
+            </p>
+            <a>See More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="home-sec2 home-sec5 bg-blue mb-40">
+  <div class="container">
+    <div class="row">
+      <div>
+        <p class="color-pri">Join Us</p>
+        <h4>Become a Volunteer</h4>
+      </div>
+    </div>
+    <div class="row">
+      <div class="flex justify-content-between align-items-center">
+        <form
+          [formGroup]="makeVolunteerForm"
+          class="form-container donation-form flex justify-content-between"
+          (ngSubmit)="sendVolunteer()"
+
+        >
+          <mat-form-field appearance="outline">
+            <mat-label>Enter Full Name </mat-label>
+
+            <input
+              formControlName="name"
+              matInput=""
+              placeholder="Enter Full Name"
+              type="text" required
+            />
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Enter Your Email</mat-label>
+
+            <input
+              formControlName="email"
+              matInput=""
+              placeholder="Enter Your Email"
+               pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}" type="email"  required
+            />
+          </mat-form-field>
+
+          <button type="submit" [disabled]="!makeVolunteerForm.valid">Join US Now</button>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+

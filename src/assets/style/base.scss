@@ -1,0 +1,128 @@
+@import "./variables.scss";
+@font-face {
+  font-family: PoppinsMed;
+  src: url(./assets/fonts/Poppins-Medium.ttf);
+}
+@font-face {
+  font-family: PoppinsBold;
+  src: url(./assets/fonts/Poppins-Bold.ttf);
+}
+
+
+// normalize
+
+html {
+  font-size: 14px;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-size: 1rem;
+
+}
+
+// readjustment
+h2{
+  font-size: 3.2rem;
+  margin-bottom: 1rem;
+  color: $pri-color;
+
+}
+h3 {
+color: $pri-color;
+font-size: 2rem;
+margin-bottom: 1rem;
+
+}
+h4{
+  font-size: 1.7rem;
+}
+img {
+width: 100%;
+}
+button {
+  background-color: $pri-color;
+  padding: 15px 20px ;
+  border: none;
+  border-radius: 25px;
+}
+form button:disabled{
+  cursor: not-allowed;
+}
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family:PoppinsMed
+}
+h2  , h3 ,h4 ,h5{
+  font-family: PoppinsBold;
+
+}
+// general classes
+.pt-20 {
+  padding-top: 20px;
+}
+.pb-20 {
+  padding-bottom: 20px;
+}
+.pt-40 {
+  padding-top: 40px;
+}
+.pb-40 {
+  padding-bottom: 40px;
+}
+.mb-20 {
+  margin-bottom: 20px;
+}
+.mb-40 {
+  margin-bottom: 40px;
+}
+.mb-80{
+  margin-bottom:80px;
+
+}
+.bg-blue {
+  background-color: $sci-color;
+}
+.bg-red {
+  background-color: $pri-color;
+}
+.bg-gray {
+  background-color: #f4f5f7;
+}
+.color-pri {
+  color: $pri-color !important;
+}
+.color-sec {
+  color: $sci-color !important;
+}
+.text-uppercase {
+  text-transform: uppercase;
+}
+.flex {
+  display: flex;
+}
+
+// general style
+
+
+
+
+  .mat-stepper-horizontal,
+  .mat-stepper-vertical {
+    background-color: transparent !important;
+  }
+
+
+
+.about_icon{
+  width: 50px;
+}

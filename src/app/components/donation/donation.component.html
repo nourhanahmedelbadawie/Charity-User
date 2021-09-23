@@ -1,0 +1,259 @@
+<app-nav [breadcrumb]="currentbreadcrumb" class="mb-40"></app-nav>
+
+<section class="about-first-sec mb-80 mt-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h3>Our New Achivement</h3>
+
+        <h4 class="text-capitalize color-sec mb-40">
+          Charity to change child's and poor peaple life
+        </h4>
+
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+          Reprehenderit doloribus dolor quidem perspiciatis iste quam deserunt
+          tenetur rerum fugiat blanditiis. Dolor officiis optio voluptas tempore
+          vero omnis facere laudantium voluptatem.Lorem ipsum dolor, sit amet
+          consectetur adipisicing elit. Reprehenderit doloribus dolor quidem
+          perspiciatis iste quam deserunt tenetur rerum fugiat blanditiis. Dolor
+          officiis optio voluptas tempore vero omnis facere laudantium
+          voluptatem.
+        </p>
+      </div>
+      <div class="col-md-6">
+        <div class="icon mt-2">
+          <img
+            class="about_icon"
+            src="../../../assets/images/about/about_icon.png"
+          />
+        </div>
+        <img src="../../../assets/images/achievement/1.jpg" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <app-nav [breadcrumb]="currentbreadcrumb"></app-nav> -->
+
+<div class="container">
+  <!-- <div class="row">
+    <section class="flex about-first-sec align-items-md-start mb-20">
+      <div>
+        <h4 class="text-capitalize color-sec mb-40">
+          Charity to change child's and poor peaple life
+        </h4>
+
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+          Reprehenderit doloribus dolor quidem perspiciatis iste quam deserunt
+          tenetur rerum fugiat blanditiis. Dolor officiis optio voluptas tempore
+          vero omnis facere laudantium voluptatem.
+        </p>
+      </div>
+      <div>
+        <img src="../../../assets/images/logo.png" />
+      </div>
+    </section>
+  </div> -->
+  <div class="row">
+    <div class="mb-40 progress_bar">
+      <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
+    </div>
+    <div class="goal flex">
+      <p>
+        <img src="../../../assets/images/donation/goal.png" />
+        <span>Goal</span>450$<span class="border"></span>
+      </p>
+
+      <p>
+        <img src="../../../assets/images/donation/Recived.png" />
+        <span>Recived</span>300$<span class="border"></span>
+      </p>
+
+      <p>
+        <img src="../../../assets/images/donation/need.png" />
+        <span>Need</span>300$
+      </p>
+    </div>
+  </div>
+  <section class="donation-form mb-40">
+    <p>Join us</p>
+    <h3>Make a Donation</h3>
+
+    <mat-horizontal-stepper>
+      <mat-step label="Personal information">
+        <mat-card>
+          <form [formGroup]="profileForm" class="form-container ">
+            <div class="row">
+              <div class="col-md-6">
+                <mat-form-field appearance="outline">
+                  <mat-label>Full name</mat-label>
+
+                  <input
+                    formControlName="name"
+                    matInput=""
+                    placeholder="Full name"
+                  />
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <mat-form-field appearance="outline">
+                  <mat-label>Email</mat-label>
+
+                  <input
+                    formControlName="email"
+                    matInput=""
+                    placeholder="Email"
+                  />
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <mat-form-field appearance="outline">
+                  <mat-label>Phone</mat-label>
+
+                  <input
+                    formControlName="phone1"
+                    matInput=""
+                    placeholder="Phone"
+                  />
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <mat-form-field appearance="outline">
+                  <mat-label>Phone</mat-label>
+
+                  <input
+                    formControlName="phone2"
+                    matInput=""
+                    placeholder="Phone"
+                  />
+                </mat-form-field>
+              </div>
+            </div>
+            <button type="button" mat-button matStepperNext class="btn">Next</button>
+          </form>
+        </mat-card>
+      </mat-step>
+
+      <mat-step label="Payment Selection">
+        <div class="payment-selection">
+          <mat-tab-group>
+            <mat-tab label="">
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla
+                eaque ad ullam laboriosam? Cupiditate alias perspiciatis
+              </p>
+            </mat-tab>
+            <mat-tab label="">
+              <form [formGroup]="visaPayment" class="form-container">
+                <div class="row">
+                  <div class="col-md-6">
+                    <mat-form-field appearance="outline">
+                      <input
+                        formControlName="donAmount"
+                        matInput=""
+                        placeholder="Donation Amount"
+                      />
+                    </mat-form-field>
+                  </div>
+                  <div class="col-md-6 select-amount">
+                    <mat-card>
+                      <mat-card-content>
+                        <ul
+                          cdkSelection
+                          (selectionChange)="onSelectionChange($event)"
+                        >
+                          <li *ngFor="let item of items">
+                            <button
+                              mat-stroked-button
+                              [cdkSelectionToggle]="item.value"
+                              (click)="onSelectionChange(item.value)"
+                            >
+                              {{ item.label }}
+                            </button>
+                          </li>
+                        </ul>
+                      </mat-card-content>
+                    </mat-card>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <mat-form-field appearance="outline">
+                      <input
+                        formControlName="cardNum"
+                        matInput=""
+                        placeholder="Card number"
+                      />
+                    </mat-form-field>
+                  </div>
+                  <div class="col-md-6">
+                    <mat-form-field appearance="outline">
+                      <input
+                        formControlName="nameCard"
+                        matInput=""
+                        placeholder="Name on Card"
+                      />
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 w-100">
+                    <mat-form-field appearance="outline">
+                      <input
+                        formControlName="expDate"
+                        matInput=""
+                        placeholder="Expiry Date"
+                      />
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline">
+                      <input
+                        formControlName="cvv"
+                        matInput=""
+                        placeholder="CVV"
+                      />
+                    </mat-form-field>
+                  </div>
+                </div>
+                <button type="button" mat-button matStepperNext>Next</button>
+              </form>
+            </mat-tab>
+            <mat-tab label=""> Content 3 </mat-tab>
+            <mat-tab label="">
+              <mat-card>
+                <form [formGroup]="fawryForm" class="fawryForm form-container">
+                  <div class="row">
+                    <div class="flex align-items-center">
+                      <mat-form-field appearance="outline">
+                        <mat-label>Full name</mat-label>
+
+                        <input
+                          formControlName="name"
+                          matInput=""
+                          placeholder="Full name"
+                        />
+                      </mat-form-field>
+
+                      <p class="currency">LE</p>
+                    </div>
+                  </div>
+                </form>
+              </mat-card>
+            </mat-tab>
+          </mat-tab-group>
+        </div>
+
+        <button mat-button matStepperPrevious>Back</button>
+        <mat-card-actions>
+          <button (click)="onSubmit()" class="btn">
+            Save
+          </button>
+        </mat-card-actions>
+      </mat-step>
+    </mat-horizontal-stepper>
+  </section>
+</div>

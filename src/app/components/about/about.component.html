@@ -1,0 +1,79 @@
+
+
+
+
+
+<app-nav [breadcrumb]="currentbreadcrumb"></app-nav>
+
+<div class="container">
+  <div class="row">
+    <div class="d-flex justify-content-between mb-4">
+      <h3 class="mt-4">About Us</h3>
+      <div class="icon mt-2">
+        <img class="about_icon" src="../../../assets/images/about/about_icon.png" />
+      </div>
+    </div>
+
+    <section class="flex about-first-sec align-items-md-start mb-20">
+      <div>
+        <h4 class="text-capitalize color-sec mb-40">
+          Charity to change child's and poor peaple life
+        </h4>
+
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+          Reprehenderit doloribus dolor quidem perspiciatis iste quam deserunt
+          tenetur rerum fugiat blanditiis. Dolor officiis optio voluptas tempore
+          vero omnis facere laudantium voluptatem.
+        </p>
+      </div>
+      <div>
+        <img src="../../../assets/images/logo.png" />
+      </div>
+    </section>
+    <section class="mb-20 about_banner">
+      <img src="../../../assets/images/Home/Group 41.png" />
+    </section>
+    <section class="mb-40">
+      <p class="px-4">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit
+        doloribus dolor quidem perspiciatis iste quam deserunt tenetur rerum
+        fugiat blanditiis. Dolor officiis optio voluptas tempore vero omnis
+        facere laudantium voluptatem.
+      </p>
+    </section>
+    <h4 class="text-capitalize color-sec mb-40 text-center">Why choose us</h4>
+    <section class="flex choose mb-40">
+      <div>
+        <h5 class="color-pri">
+          <span>{{choose[chooseContent].num}}
+          </span>
+          {{choose[chooseContent].title}}
+        </h5>
+        <p class="px-4" >
+{{choose[chooseContent].content}}
+        </p>
+      </div>
+      <div class="icons">
+        <div (click)="setChooseContent(0)">
+          <div class="img" ></div>
+        </div>
+        <div (click)="setChooseContent(1)">
+          <div class="img" ></div>
+        </div>
+
+        <div (click)="setChooseContent(2)">
+          <div class="img" ></div>
+        </div>
+
+        <div (click)="setChooseContent(3)">
+          <div class="img" ></div>
+        </div>
+      </div>
+
+
+
+
+    </section>
+  </div>
+</div>

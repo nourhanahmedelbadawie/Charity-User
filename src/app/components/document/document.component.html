@@ -1,0 +1,80 @@
+<div class="mb-40">
+  <app-nav [breadcrumb]="currentbreadcrumb"></app-nav>
+</div>
+<div>
+  <div class="container">
+    <div class="row">
+      <section class="responsive-doc flex about-first-sec align-items-md-start">
+        <div>
+          <h4 class="text-capitalize color-sec mb-40">
+            Charity to change child's and poor peaple life
+          </h4>
+
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            Reprehenderit doloribus dolor quidem perspiciatis iste quam deserunt
+            tenetur rerum fugiat blanditiis. Dolor officiis optio voluptas
+            tempore vero omnis facere laudantium voluptatem.
+          </p>
+        </div>
+        <div>
+          <img src="../../../assets/images/logo.png" />
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-5">
+  <section class="bg-gray pb-40 pt-40">
+    <div class="container">
+      <div
+        class="row doc mb-80 align-items-center"
+        *ngFor="let item of files; let i = index"
+      >
+        <div class="col-md-12 col-sm-12 d-flex" *ngIf="i % 2 === 0">
+          <div class="col-md-6 col-sm-12">
+            <h4>{{ item.title }}</h4>
+            <p>
+              {{ item.intro }}
+            </p>
+            <div class="flex align-items-center mb-2">
+              <img src="src=../../../assets/images/documents/pdf.png" />
+              <h4>{{ item.title }}</h4>
+              <a href="{{ baseUrl + item.file_path }}" target="_blank"
+                >Download
+              </a>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-sm-12">
+            <div>
+              <img src="{{ baseUrl + item.image_path }}" />
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12 col-sm-12 d-flex" *ngIf="i % 2 === 0">
+          <div class="col-md-6 col-sm-12">
+            <div>
+              <img src="{{ baseUrl + item.image_path }}" />
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <h4>{{ item.title }}</h4>
+            <p>
+              {{ item.intro }}
+            </p>
+            <div class="flex align-items-center mb-2">
+              <img src="src=../../../assets/images/documents/pdf.png" />
+              <h4>{{ item.title }}</h4>
+              <a href="{{ baseUrl + item.file_path }}" target="_blank"
+                >Download
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,41 @@
+
+.about-first-sec {
+    > div {
+      width: 50%;
+    }
+    div img {
+      width: 50%;
+      display: block;
+      margin: 0px auto;
+      border-radius: 10px;
+      @media screen and (max: width 500px) {
+        width: 100%;
+      }
+    }
+  }
+  .doc{
+    .flex {
+      img{
+        width: 32px;
+        margin-right: 10px;      }
+    }
+    a{
+      color: #f92b20 !important;
+      font-weight: bold;
+      
+    margin-left: 10px;
+  
+  
+  
+    }
+  }
+  .responsive-doc{
+    @media screen and (max-width:600px) {
+      .row.doc{
+      border-bottom: 4px dotted #28246b;
+      padding-bottom: 60px;
+      margin: 0px 4px 60px 4px;
+    
+    }
+  }
+  }

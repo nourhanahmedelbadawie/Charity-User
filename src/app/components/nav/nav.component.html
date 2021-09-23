@@ -1,0 +1,115 @@
+<div
+  class="header-page"
+  [ngStyle]="{ 'background-image': 'url(' + breadcrumb.bg + ')' }"
+>
+  <div class="navbar-header">
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container">
+        <a class="navbar-brand" href="#"
+          ><img src="../../../assets/images/logo_white.png" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse mobile-menu"
+          id="navbarSupportedContent"
+        >
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" routerLink="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/about">About</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                routerLink="/contact"
+                >Contact us
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" routerLink="/document">Documents</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" routerLink="/partners">Partners</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item mr-3">
+              <a class="nav-link"> <i class="fas fa-search"></i></a>
+            </li>
+            <li class="nav-item">
+              <a  routerLink="/donation" class="btn nav-link donation">Make A Donation</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="breadcrumb" *ngIf="!breadcrumb.home">
+        <p>
+          <a class="nav-link" routerLink="/">Home</a> <span> ></span>
+          {{ breadcrumb.title }}
+        </p>
+
+        <h4>
+          <a class="nav-link" routerLink="{{ breadcrumb.link }}">{{
+            breadcrumb.subtitle
+          }}</a>
+        </h4>
+      </div>
+      <div *ngIf="breadcrumb.home" class="header-home">
+        <div class="grid">
+          <div>
+            <h2>{{ breadcrumb.title }}</h2>
+            <p>{{ breadcrumb.subtitle }}</p>
+          </div>
+          <div class="social-icons">
+            <a>
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a>
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a>
+              <i class="fab fa-twitter"></i>
+            </a>
+
+            <a> <i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="flex">
+          <a (click)="goDown()" class="arrow-down">
+            <i class="fas fa-arrow-down"></i>
+          </a>
+          <div class="phone-icon-container">
+            <div class="phone-icon">
+              <div class="text-center">
+                <a href="#">
+                  <div class="btn">
+                    <i class="ico"></i>
+                    <span>0123456787</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

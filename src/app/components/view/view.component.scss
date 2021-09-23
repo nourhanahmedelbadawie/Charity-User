@@ -1,0 +1,198 @@
+@import "../../../assets/style/variables.scss";
+
+// footer
+footer {
+  img {
+    width: 100px;
+  }
+  .footer-text {
+    width: 40%;
+  }
+  .links {
+    width: 42%;
+    text-align: center;
+    justify-self: self-end;
+    margin: 0 auto;
+  }
+  .links .nav-link:nth-of-type(1),
+  .links-inside > p:nth-of-type(1) {
+    color: $pri-color;
+  }
+
+  * {
+    color: white;
+  }
+@media screen and (max-width:900px) {
+  .row > .d-flex{
+    flex-direction: column;
+    .footer-text ,.links{
+      width: 100%;
+    }
+ 
+  .social-icons{
+    flex-direction: row !important;
+    width: 100%;
+
+  }
+}
+
+.letter{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+  }
+  .subscribe{
+    margin: 0px;
+    div.field button{
+      position: unset;
+    }
+  }
+}
+
+}
+.social-icons {
+  margin-left: auto;
+  margin-top: 25px;
+}
+.radioBtns {
+  display: flex;
+  align-items: center;
+}
+.radiobtn {
+  position: relative;
+  label {
+    display: block;
+    // background: lighten($pri-color, 30%);
+    color: white;
+    border-radius: 5px;
+    padding: 10px 20px;
+    // border: 2px solid lighten($pri-color, 20%);
+    margin-bottom: 5px;
+    cursor: pointer;
+    &:after,
+    &:before {
+      content: "";
+      position: absolute;
+
+      left: -6%;
+      top: 24%;
+
+      width: 20px;
+      height: 20px;
+      border-radius: 3px;
+      // background: lighten($pri-color, 15%);
+
+      background-color: transparent;
+      border: 1px solid white;
+    }
+    &:before {
+      background: transparent;
+      // transition: 0.1s width cubic-bezier(0.075, 0.82, 0.165, 1) 0s,
+      // 	0.3s height cubic-bezier(0.075, 0.82, 0.165, 2) 0.1s;
+      z-index: 2;
+      overflow: hidden;
+      background-repeat: no-repeat;
+      background-size: 13px;
+      background-position: center;
+      width: 0;
+      height: 0;
+
+      background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNS4zIDEzLjIiPiAgPHBhdGggZmlsbD0iI2ZmZiIgZD0iTTE0LjcuOGwtLjQtLjRhMS43IDEuNyAwIDAgMC0yLjMuMUw1LjIgOC4yIDMgNi40YTEuNyAxLjcgMCAwIDAtMi4zLjFMLjQgN2ExLjcgMS43IDAgMCAwIC4xIDIuM2wzLjggMy41YTEuNyAxLjcgMCAwIDAgMi40LS4xTDE1IDMuMWExLjcgMS43IDAgMCAwLS4yLTIuM3oiIGRhdGEtbmFtZT0iUGZhZCA0Ii8+PC9zdmc+);
+    }
+  }
+  input[type="radio"] {
+    display: none;
+    position: absolute;
+    width: 100%;
+    appearance: none;
+    &:checked + label {
+      // background: lighten($pri-color, 15%);
+      // animation-name: blink;
+      // animation-duration: 1s;
+      // border-color: $pri-color;
+      &:after {
+        // background: $pri-color;
+      }
+      &:before {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+}
+
+@keyframes blink {
+  0% {
+    background-color: lighten($pri-color, 15%);
+  }
+  10% {
+    background-color: lighten($pri-color, 15%);
+  }
+  11% {
+    background-color: lighten($pri-color, 20%);
+  }
+  29% {
+    background-color: lighten($pri-color, 20%);
+  }
+  30% {
+    background-color: lighten($pri-color, 15%);
+  }
+  50% {
+    background-color: lighten($pri-color, 20%);
+  }
+  45% {
+    background-color: lighten($pri-color, 15%);
+  }
+  50% {
+    background-color: lighten($pri-color, 20%);
+  }
+  100% {
+    background-color: lighten($pri-color, 15%);
+  }
+}
+
+.social-icons {
+  a {
+    cursor: pointer;
+    background-color: #ffffff2b;
+    width: 30px;
+    height: 30px;
+    margin: 7px;
+    font-size: 23px;
+    text-align: center;
+    line-height: 29px;
+    color: white;
+    border-radius: 50%;
+    i::before{
+      font-size: 1.2rem;
+    }
+  }
+  
+}
+.letter {
+  align-items: center;
+  width: 75%;
+  display: flex;
+  justify-content: space-between;
+}
+.subscribe {
+ 
+
+   div.field {
+      position: relative;
+      button {
+        position: absolute;
+        right: -13%;
+        top: 4%;
+        padding: 15px 56px;
+        padding-bottom: 16px;
+      }
+    }
+  
+  margin-left: 25px;
+  .mat-form-field {
+    width: 100%;
+  }
+}

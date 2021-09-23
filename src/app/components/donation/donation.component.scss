@@ -1,0 +1,151 @@
+@import "../../../assets/style/variables.scss";
+
+
+.goal {
+  width:80%;
+  align-items: center;
+  justify-content: space-around;
+  margin: 0 auto;
+
+  p {
+    span {
+      margin-right: 4%;
+    }
+  }
+  img {
+    width: 30px;
+
+    margin-right: 2%;
+  }
+  .border {
+    background-color: $sci-color;
+    height: 3px;
+    width: 48px;
+    margin: 0px 4%;
+    display: inline-block;
+  }
+}
+@media screen and (min-width: 900px) {
+  .progress_bar {
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 40px;
+  }
+}
+.full-width {
+  width: 100%;
+}
+
+.top-padding {
+  padding-top: 3px;
+}
+
+.margin-left mat-radio-button:not(:first-child) {
+  margin-left: 10px;
+}
+
+.form-container {
+  margin: 100px;
+}
+
+.mat-stepper-horizontal {
+  margin-top: 8px;
+}
+
+.mat-form-field {
+  margin-top: 16px;
+  width: 100%;
+}
+
+.donation-form {
+  padding: 40px;
+  background-color: $sci-color !important ;
+  border-radius: 10px;
+  margin: 40px auto;
+  max-width:800px
+}
+
+
+.sec3{
+  img{
+    border-radius: 10px;
+  }
+}
+img.about_icon{
+  margin-bottom: 40px !important;
+  width: 50px;
+  float: right;
+}
+.about-first-sec{
+  padding-top: 40px;
+}
+.about-first-sec {
+  h3{
+
+    margin-top: 50px;
+  }
+ 
+  div img {
+    display: block;
+    margin: 0px auto;
+    border-radius: 10px;
+    @media screen and (max: width 500px) {
+      width: 100%;
+    }
+  }
+}
+.btn{
+  background-color: $pri-color;
+  padding-left: 60px;
+  padding-right: 60px;
+  border-radius: 18px;
+  &:hover{
+    color: white !important;
+  }
+}
+
+.select-amount button,
+.currency {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  line-height: 40px;
+  padding: 0px;
+  min-width: unset;
+  background-color: transparent;
+  border: 1px solid white;
+}
+.fawryForm
+{
+
+ .currency{
+  background-color: $pri-color;
+  text-align: center;
+  border: transparent;
+  margin-left: 19px;
+
+}
+.mat-form-field {
+  margin-top: 16px;
+  width: 65%;
+}
+}
+.select-amount {
+  ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    width: 100%;
+    padding-left: 0px;
+    justify-content: space-between;
+    li {
+      display: inline-block;
+    }
+  }
+
+
+  .cdk-focused {
+    background-color: $pri-color;
+    border-color: $pri-color;
+  }
+}

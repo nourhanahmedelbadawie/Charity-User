@@ -1,0 +1,180 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "@angular/material/prebuilt-themes/indigo-pink.css";
+@import "../src/assets/style/variables.scss";
+
+@import "../src/assets/style/base.scss";
+
+// overWrite Angular material
+.mat-progress-bar {
+  height: 8px !important;
+}
+.donation-form,
+.contact-form {
+  * {
+    color: white;
+  }
+
+  .mat-horizontal-stepper-header-container {
+    justify-content: space-around;
+    
+    .mat-stepper-horizontal-line {
+      display: none;
+    }
+  }
+  button {
+    float: right;
+
+      width: 50%;
+  
+    @media screen and (max-width: 600px) {
+      width: 100%;
+    }
+  }
+  .mat-form-field-appearance-outline
+    .mat-form-field-outline-thick
+    .mat-form-field-outline-end,
+  .mat-form-field-appearance-outline
+    .mat-form-field-outline-thick
+    .mat-form-field-outline-gap,
+  .mat-form-field-appearance-outline
+    .mat-form-field-outline-thick
+    .mat-form-field-outline-start {
+    border-color: $pri-color;
+  }
+  .mat-form-field {
+    width: 30%;
+    margin-right: 5px;
+    @media screen  and (max-width:600px) {
+      width: 100%;
+      margin-right: 0px;
+
+    }
+  }
+  .mat-card {
+    background-color: transparent;
+    box-shadow: none;
+  }
+  .mat-step-header .mat-step-icon-selected {
+    background-color: $pri-color;
+    box-shadow: none;
+  }
+  .mat-form-field-appearance-outline .mat-form-field-outline-thick,
+  .mat-form-field-appearance-outline .mat-form-field-outline,
+  input::placeholder,
+  .mat-form-field-label,
+  .mat-form-field.mat-focused .mat-form-field-label {
+    color: white;
+  }
+  .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+    color: $pri-color;
+  }
+  //   .mat-form-field-appearance-outline .mat-form-field-outline-start {
+  //     display: none;
+  //   }
+  //   .mat-form-field-appearance-outline .mat-form-field-outline-gap {
+  //     border-radius: 50px 0px 0px 50px;
+  //     padding-left: 30px;
+  //   }
+
+  .mat-form-field-appearance-outline .mat-form-field-outline-end {
+    border-radius: 0px 50px 50px 0px;
+  }
+
+  .mat-form-field-appearance-outline .mat-form-field-outline-start {
+    border-radius: 111% 0 0 105%;
+    border-right-style: none;
+    width: 46.75px !important;
+  }
+  .mat-form-field-appearance-outline.textarea .mat-form-field-outline-start {
+    width: 59.75px !important;
+  }
+  .mat-step-header .mat-step-icon {
+    background-color: white;
+    height: 40px;
+    width: 40px;
+  }
+  .mat-step-icon .mat-icon,
+  .mat-step-icon-content span {
+    color: $pri-color;
+    font-weight: bold;
+  }
+
+  .mat-step-header .mat-step-icon-selected {
+    background-color: $pri-color;
+    .mat-step-icon-content span {
+      color: white;
+    }
+  }
+  .payment-selection {
+    .mat-tab-label {
+      background-color: #28256b;
+      margin-right: 10px;
+      border: 1px solid white;
+      border-radius: 10px;
+    }
+    .mat-tab-label:focus:not(.mat-tab-disabled) {
+      background-color: $pri-color;
+      border: 1px solid $pri-color;
+    }
+    .mat-tab-group.mat-primary .mat-ink-bar,
+    .mat-tab-nav-bar.mat-primary .mat-ink-bar {
+      display: none;
+    }
+  }
+
+  .mat-tab-label {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto;
+  }
+  .mat-tab-label:nth-of-type(1) {
+    background-image: url("./assets/images/donation/paypal-color-large.png");
+  }
+
+  .mat-tab-label:nth-of-type(2) {
+    background-image: url("./assets/images/donation/visa-color_large.png");
+  }
+
+  .mat-tab-label:nth-of-type(3) {
+    background-image: url("./assets/images/donation/mastercard-color_large.png");
+  }
+  .mat-tab-label:nth-of-type(4) {
+    background-image: url("./assets/images/donation/fawry-en1.png");
+  }
+}
+.mat-form-field-appearance-outline.mat-form-field-can-float
+  .mat-input-server:focus
+  + .mat-form-field-label-wrapper
+  .mat-form-field-label,
+.mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float
+  .mat-form-field-label {
+  transform: translate(2.8em, -1.59375em) scale(0.75);
+}
+.mat-progress-bar {
+  border-radius: 10px;
+}
+.textarea.mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float
+  .mat-form-field-label {
+  transform: translate(3.8em, -1.59375em) scale(0.75);
+}
+.mat-tab-header {
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+footer .mat-form-field-infix {
+  width: 305px !important;
+}
+//loader
+.loader {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+  height: 99vh;
+}
+.mat-progress-spinner circle,
+.mat-spinner circle {
+  stroke: $pri-color;
+}

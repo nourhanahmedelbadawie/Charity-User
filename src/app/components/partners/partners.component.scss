@@ -1,0 +1,92 @@
+@import "../../../assets/style/variables.scss";
+
+.about-first-sec {
+  padding-top: 40px;
+}
+.about-first-sec {
+  h3 {
+    margin-top: 50px;
+  }
+
+  div img {
+    display: block;
+    margin: 0px auto;
+    border-radius: 10px;
+    @media screen and (max: width 500px) {
+      width: 100%;
+    }
+  }
+}
+
+.logo-panner {
+  img {
+    width: 33%;
+    display: block;
+    margin: 0 auto;
+  }
+}
+.partner {
+  background-color: #f4f5f7;
+  padding: 40px 0px;
+  text-align: center;
+  .txt {
+    h2 {
+    }
+    p {
+      font-weight: bold;
+      color: $sci-color;
+      text-transform: capitalize;
+    }
+  }
+  
+  .grid_logos {
+    &.mob{
+      display: none;
+    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    > div {
+      display: flex;
+               flex-direction: column;
+              justify-content: center;
+              &:not(.col5){
+                margin-left: 10px;
+              }
+      figure {
+      
+        box-shadow: 0px 1px 7px 6px rgba(0, 0, 0, 0.12);
+ 
+
+    width: 175px;
+    padding: 4px 20px;
+    border-radius: 10px;
+    background-color: white;
+    height: 58px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 75px;
+        img {
+          width: 100px;
+        }
+      }
+    }
+  }
+  @media screen and (max-width:900px) {
+    .grid_logos{
+      display: none;
+    }
+    .grid_logos.mob{
+      display: block;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      figure{
+        img{
+          width: 100px;
+        }
+      }
+    }
+  }
+}

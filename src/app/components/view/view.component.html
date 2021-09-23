@@ -1,0 +1,143 @@
+<div className="page-container">
+  <div *ngIf="loader; else contentLoaded" class="loader">
+    <mat-spinner></mat-spinner>
+  </div>
+  <ng-template #contentLoaded>
+    <main>
+      <router-outlet></router-outlet>
+    </main>
+    <footer class="bg-blue pt-20 pb-20">
+      <div class="container">
+        <div class="row">
+          <div class="d-flex">
+            <div class="footer-text">
+              <img src="../../../assets/images/logo_white.png" />
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Veritatis accusantium quisquam, praesentium excepturi esse
+                molestiae dignissimos
+              </p>
+            </div>
+            <div class="links">
+              <div class="d-flex">
+                <div>
+                  <a class="nav-link active" routerLink="/">Home</a>
+                  <a class="nav-link active" routerLink="/about ">About</a>
+
+                  <a class="nav-link active" routerLink="/contact">Contact us</a>
+
+                  <a class="nav-link active" routerLink="/partners">partners</a>
+                </div>
+
+                <div class="links-inside">
+                  <a class="nav-link active color-red" routerLink="/"
+                    >Help us</a
+                  >
+                  <a class="nav-link active" routerLink="/">Make A Donation</a>
+                  <a class="nav-link active" routerLink="/"
+                    >Join us As Volunteer</a
+                  >
+                </div>
+                <div class="links-inside">
+                  <p class="color-red">Contact us</p>
+                  <p>012345678910</p>
+
+                  <p>521 New york</p>
+
+                  <p>Contac@email.com</p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="
+                social-media social-icons
+                d-flex
+                justify-content-around
+                flex-column
+              "
+            >
+              <a>
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a>
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a>
+                <i class="fab fa-twitter"></i>
+              </a>
+
+              <a> <i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+
+          <div class="flex">
+            <form
+              [formGroup]="subscribeForm"
+              (ngSubmit)="subscribe()"
+              class="letter flex donation-form"
+            >
+              <span> News Letter Through </span>
+
+              <section class="radioBtns">
+                <div class="radiobtn">
+                  <input
+                    type="radio"
+                    required
+                    id="huey"
+                    formControlName="type"
+                    value="email"
+                    checked
+                  />
+                  <label for="huey">Email</label>
+                </div>
+
+                <div class="radiobtn">
+                  <input
+                    type="radio"
+                    required
+                    id="dewey"
+                    formControlName="type"
+                    value="whatsapp"
+                  />
+                  <label for="dewey">Whatsapp</label>
+                </div>
+
+                <div class="radiobtn">
+                  <input
+                    type="radio"
+                    required
+                    id="louie"
+                    formControlName="type"
+                    value="telegram"
+                  />
+                  <label for="louie">Telegram</label>
+                </div>
+              </section>
+
+              <div class="subscribe">
+                <div class="field">
+                  <mat-form-field appearance="outline">
+                    <mat-label>Enter Your Email</mat-label>
+
+                    <input
+                      formControlName="email"
+                      matInput=""
+                      placeholder="Enter Your Email"
+                      pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}"
+                      type="email"
+                      required
+                    />
+                  </mat-form-field>
+
+                  <button type="submit" [disabled]="!subscribeForm.valid">
+                    Subscribe
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </ng-template>
+</div>
