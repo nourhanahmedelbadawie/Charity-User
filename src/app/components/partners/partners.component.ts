@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { GetStaticDataService } from "src/app/config/get-static-data.service";
 
 @Component({
   selector: "app-partners",
@@ -6,9 +7,22 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./partners.component.scss"],
 })
 export class PartnersComponent implements OnInit {
-  constructor() {}
+  PartnertData: any;
+  constructor( private getStaticDataService:GetStaticDataService ) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+
+         // get Partner  Data 
+         this.getStaticDataService.getPartnerData(
+          ).subscribe(data=>{
+           this.PartnertData= (data)
+           console.log(this.PartnertData)
+         
+       
+       
+     })
+     
+  }
   currentbreadcrumb: {} = {
     title: "Partners",
     subtitle: "Partners",
@@ -16,3 +30,4 @@ export class PartnersComponent implements OnInit {
     link: "/partners",
   };
 }
+    

@@ -15,6 +15,8 @@ import Swal from 'sweetalert2'
 })
 export class HomeComponent implements OnInit {
   homeStaticData=null
+  achievementData=null
+
   currentbreadcrumb=null
 
 
@@ -41,6 +43,14 @@ export class HomeComponent implements OnInit {
  
    })
 
+
+      // get Achivement  Data 
+      this.getStaticDataService.getAchcData().subscribe(data=>{
+        this.achievementData= (data)
+        console.log(this.achievementData)
+      
+    
+      })
   }
  
 
