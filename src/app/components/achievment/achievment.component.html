@@ -5,8 +5,6 @@
 
 <app-nav [breadcrumb]="currentbreadcrumb" class="mb-40"></app-nav>
 
-
-     
    
 
      
@@ -18,20 +16,13 @@
 
      
        
-        <h3 >Our New Achivement</h3>
+        <h3 >{{achievementData.title}}</h3>
 
         <h4 class="text-capitalize color-sec mb-40">
-          Charity to change child's and poor peaple life
-        </h4>
+          {{achievementData.intro}}        </h4>
 
         <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-          Reprehenderit doloribus dolor quidem perspiciatis iste quam deserunt
-          tenetur rerum fugiat blanditiis. Dolor officiis optio voluptas tempore
-          vero omnis facere laudantium voluptatem.Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-          Reprehenderit doloribus dolor quidem perspiciatis iste quam deserunt
-          tenetur rerum fugiat blanditiis. Dolor officiis optio voluptas tempore
-          vero omnis facere laudantium voluptatem.
+          {{achievementData.body}}  
         </p>
       </div>
       <div  class="col-md-6">

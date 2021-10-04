@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { GetStaticDataService } from 'src/app/config/get-static-data.service';
 
 @Component({
   selector: 'app-about',
@@ -12,7 +14,25 @@ export class AboutComponent implements OnInit {
     bg:"../../../assets/images/about/about_manner.jpg",
     link:"/about"
   }
-  constructor() { }
+
+  
+ 
+  aboutData: any;
+
+  constructor( private getStaticDataService:GetStaticDataService ) { }
+
+  ngOnInit() {
+    
+     // get Achivement  Data 
+     this.getStaticDataService.getAboutData(
+     ).subscribe(data=>{
+      this.aboutData= (data)
+      console.log(this.aboutData)
+     }
+     )
+    }
+    
+  
   chooseContent:number=0
   choose:{}[]=[{
     title:"Places To Get Lost"
@@ -41,7 +61,6 @@ export class AboutComponent implements OnInit {
 this.chooseContent=i
   }
 
-  ngOnInit() {
-  }
+  
 
 }

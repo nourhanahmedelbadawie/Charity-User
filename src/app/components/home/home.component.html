@@ -75,38 +75,18 @@
 
       <div>
         <div>
-          <div>
+        
+          <div *ngFor="let item of achievementData | slice:-4">
             <img src="../../../assets/images/achievement/nico-smit-NFoerQuvzrs-unsplash.png" />
-            <h4>How we fight to have agreat world</h4>
+            <h4>
+              {{item.title}}</h4>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
-              doloribus rerum recusandae deserunt obcaecati atque architecto
-              reiciendis!
+              {{item.body}}
             </p>
-            <a>See More</a>
+            <a routerLink="/achievement/{{item.id}}">See More</a>
           </div>
-          <div>
-            <img src="../../../assets/images/achievement/tanjir-ahmed-chowdhury-Nem1BLADG4c-unsplash.png" />
-            <h4>How we fight to have agreat world</h4>
 
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
-              doloribus rerum recusandae deserunt obcaecati atque architecto
-              reiciendis!
-            </p>
-            <a>See More</a>
-          </div>
-          <div>
-            <img src="../../../assets/images/achievement/tim-mossholder-vTA2Het76y8-unsplash.png" />
-            <h4>How we fight to have agreat world</h4>
-
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
-              doloribus rerum recusandae deserunt obcaecati atque architecto
-              reiciendis!
-            </p>
-            <a>See More</a>
-          </div>
+  
         </div>
       </div>
     </div>

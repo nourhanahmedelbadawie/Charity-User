@@ -12,7 +12,7 @@ import { DocumentComponent } from "./components/document/document.component";
 const routes: Routes = [
   { path: "", component: HomeComponent },
   { path: "about", component: AboutComponent },
-  { path: "achievement", component: AchievmentComponent },
+  { path: "achievement/:id", component: AchievmentComponent },
 
   { path: "donation", component: DonationComponent },
   { path: "document", component: DocumentComponent },

@@ -40,8 +40,42 @@ export class GetStaticDataService {
     );
   }
 
+    // get Achievemnt data
+    getAchcData(): Observable<any> {
+      return this.http.get<any>(`${this.configUrl}/get_all_achievements`, httpOptions)    
+    .pipe(
+      catchError(this.handleError)
+    );
+    }
+    getOneAchData(id): Observable<any> {
+      return this.http.get<any>(`${this.configUrl}/achievements/${id}`, httpOptions)    
+    .pipe(
+      catchError(this.handleError)
+    );
+
+  }
+    // get About  data
+
+  
+
+  getAboutData(): Observable<any> {
+    return this.http.get<any>(`${this.configUrl}/getAboutUsMain`, httpOptions)    
+  .pipe(
+    catchError(this.handleError)
+  );
+
+}
 
 
+// get Partner Data 
+
+getPartnerData(): Observable<any> {
+  return this.http.get<any>(`${this.configUrl}/dashboard/static_partners/`, httpOptions)    
+.pipe(
+  catchError(this.handleError)
+);
+
+}
 
 
 
