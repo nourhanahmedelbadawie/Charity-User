@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { GetStaticDataService } from 'src/app/config/get-static-data.service';
+import { baseUrl } from "../../../environments/environment";
 
 @Component({
   selector: 'app-achievment',
@@ -8,13 +9,10 @@ import { GetStaticDataService } from 'src/app/config/get-static-data.service';
   styleUrls: ['./achievment.component.scss']
 })
 export class AchievmentComponent implements OnInit {
-    currentbreadcrumb:{}={
-    title:"Achievement",
-    subtitle:"Achievement",
-    bg:"../../../assets/images/about/about_manner.jpg",
-    link:"/achievement"
-  }
+ 
   achievementData: any;
+  baseUrl=baseUrl
+  currentbreadcrumb: { title: string; subtitle: string; bg: string; link: string; };
 
   constructor( private getStaticDataService:GetStaticDataService ,private route: ActivatedRoute) { }
 
@@ -28,6 +26,12 @@ export class AchievmentComponent implements OnInit {
     
   
     })
+    this.currentbreadcrumb={
+      title:"Achievement",
+      subtitle:"Achievement",
+      bg:`${baseUrl}${this.achievementData.cover_path}`,
+      link:"/achievement"
+    }
   }
  
 }

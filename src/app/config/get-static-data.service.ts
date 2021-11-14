@@ -19,7 +19,7 @@ const httpOptions = {
 })
 export class GetStaticDataService {
 
-  configUrl = 'http://178.62.19.101:8888/index.php/api';
+  configUrl = 'http://137.184.108.244:8081/index.php/api';
 
 
   constructor(private http: HttpClient) { }
@@ -27,6 +27,13 @@ export class GetStaticDataService {
   // get Home data
   getHomeData(): Observable<any> {
       return this.http.get<any>(`${this.configUrl}/getHomescreen/`, httpOptions)    
+    .pipe(
+      catchError(this.handleError)
+    );
+  }
+    // get urgent data
+    getUrgentData(): Observable<any> {
+      return this.http.get<any>(`${this.configUrl}/departments/get_urgent_department`, httpOptions)    
     .pipe(
       catchError(this.handleError)
     );
@@ -39,7 +46,12 @@ export class GetStaticDataService {
       catchError(this.handleError)
     );
   }
-
+  getDocPageStaticData(): Observable<any> {
+    return this.http.get<any>(`${this.configUrl}/getStatic_docs`, httpOptions)    
+  .pipe(
+    catchError(this.handleError)
+  );
+}
     // get Achievemnt data
     getAchcData(): Observable<any> {
       return this.http.get<any>(`${this.configUrl}/get_all_achievements`, httpOptions)    
@@ -59,7 +71,7 @@ export class GetStaticDataService {
   
 
   getAboutData(): Observable<any> {
-    return this.http.get<any>(`${this.configUrl}/getAboutUsMain`, httpOptions)    
+    return this.http.get<any>(`${this.configUrl}/getAboutUsMainPage`, httpOptions)    
   .pipe(
     catchError(this.handleError)
   );
@@ -70,7 +82,7 @@ export class GetStaticDataService {
 // get Partner Data 
 
 getPartnerData(): Observable<any> {
-  return this.http.get<any>(`${this.configUrl}/dashboard/static_partners/`, httpOptions)    
+  return this.http.get<any>(`${this.configUrl}/getStaticPartners/`, httpOptions)    
 .pipe(
   catchError(this.handleError)
 );
@@ -90,6 +102,7 @@ getPartnerData(): Observable<any> {
         `Backend returned code ${error.status}, body was: `, error.error);
     }
     // Return an observable with a user-facing error message.
+    
     return throwError(
       'Something bad happened; please try again later.');
   }

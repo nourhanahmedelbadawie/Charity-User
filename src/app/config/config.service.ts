@@ -16,7 +16,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class ConfigService {
-  configUrl = 'http://178.62.19.101:8888/index.php/api';
+  configUrl = 'http://137.184.108.244:8081/index.php/api';
 
 
   constructor(private http: HttpClient) { }

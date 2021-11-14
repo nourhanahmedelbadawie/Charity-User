@@ -8,34 +8,33 @@ import { baseUrl } from "../../../environments/environment";
   styleUrls: ['./document.component.scss']
 })
 export class DocumentComponent implements OnInit {
-  currentbreadcrumb:{}={
-    title:"Document",
-    subtitle:"Document",
-    bg:"../../../assets/images/about/about_manner.jpg",
-    link:"/doc"
-  }
+
   files:[]=[]
+  DocStaticData
   baseUrl=baseUrl
-//   {
-//     "id": 1,
-//     "title": "this is title",
-//     "intro": "intro",
-//     "image_path": "documents/1/image/jrV9BnUgrK610d603cc844f.png",
-//     "file_path": "documents/1/file/k5P2ScyVXY610e3632af749.pdf",
-//     "created_at": "2021-08-06T12:15:56.000000Z",
-//     "updated_at": "2021-08-07T03:28:50.000000Z"
-// }
+  currentbreadcrumb: { title: string; subtitle: string; bg: string; link: string; };
+
   constructor(
     private getStaticDataService:GetStaticDataService )  { }
 
   ngOnInit() {
+// get static data 
 
+this.getStaticDataService.getDocPageStaticData().subscribe(data=>{
+  this.DocStaticData=data
+  console.log(data)
+})
     this.getStaticDataService.getDocData().subscribe(data=>{
       this.files=data
       console.log(data)
     })
+    this.currentbreadcrumb={
+      title:"Document",
+      subtitle:"Document",
+      bg:`${baseUrl}${this.DocStaticData.cover_path}`,
+      link:"/doc"
+    }
   }
-  // http://178.62.19.101:8888/index.php/api
   pdfSrc = "https://vadimdez.github.io/ng2-pdf-viewer/assets/pdf-test.pdf";
 
 }

@@ -20,7 +20,8 @@
                 formControlName="name"
                 matInput=""
                 placeholder="Donar Name"
-                type="text" required
+                type="text"
+                required
               />
             </mat-form-field>
 
@@ -30,14 +31,17 @@
               <input
                 formControlName="email"
                 matInput=""
-                 pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}" type="email"  required
+                pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}"
+                type="email"
+                required
                 placeholder="Enter Your Email"
               />
             </mat-form-field>
 
-            <button type="submit" [disabled]="!makeDonationForm.valid">Make A Donation</button>
+            <button type="submit" [disabled]="!makeDonationForm.valid">
+              Make A Donation
+            </button>
           </form>
-
         </div>
       </div>
     </div>
@@ -50,19 +54,24 @@
       <div class="col-md-6 col-sm-12">
         <h2>About us</h2>
         <h4 class="text-capitalize color-sec mb-40">
-        {{homeStaticData.AboutUsSection.title}}
+          {{ homeStaticData.AboutUsSection.title }}
         </h4>
 
         <p>
-          {{homeStaticData.AboutUsSection.body}}
-
+          {{ homeStaticData.AboutUsSection.body }}
         </p>
       </div>
       <div class="col-md-6 col-sm-12">
-        <img src="../../../assets/images/Home/Group 41.png" />
+        <img
+          src="{{ baseUrl + homeStaticData.AboutUsSection.image_path[0] }}"
+        />
         <div class="flex">
-          <img src="../../../assets/images/Home/Group 39.png" />
-          <img src="../../../assets/images/Home/Group 40.png" />
+          <img
+            src="{{ baseUrl + homeStaticData.AboutUsSection.image_path[1] }}"
+          />
+          <img
+            src="{{ baseUrl + homeStaticData.AboutUsSection.image_path[2] }}"
+          />
         </div>
       </div>
     </div>
@@ -75,18 +84,16 @@
 
       <div>
         <div>
-        
-          <div *ngFor="let item of achievementData | slice:-4">
-            <img src="../../../assets/images/achievement/nico-smit-NFoerQuvzrs-unsplash.png" />
+          <div *ngFor="let item of achievementData | slice: -3">
+            <img src="{{ baseUrl + item.cover_path }}" />
             <h4>
-              {{item.title}}</h4>
+              {{ item.title }}
+            </h4>
             <p>
-              {{item.body}}
+              {{ item.body }}
             </p>
-            <a routerLink="/achievement/{{item.id}}">See More</a>
+            <a routerLink="/achievement/{{ item.id }}">See More</a>
           </div>
-
-  
         </div>
       </div>
     </div>
@@ -106,7 +113,6 @@
           [formGroup]="makeVolunteerForm"
           class="form-container donation-form flex justify-content-between"
           (ngSubmit)="sendVolunteer()"
-
         >
           <mat-form-field appearance="outline">
             <mat-label>Enter Full Name </mat-label>
@@ -115,7 +121,8 @@
               formControlName="name"
               matInput=""
               placeholder="Enter Full Name"
-              type="text" required
+              type="text"
+              required
             />
           </mat-form-field>
 
@@ -126,17 +133,33 @@
               formControlName="email"
               matInput=""
               placeholder="Enter Your Email"
-               pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}" type="email"  required
+              pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}"
+              type="email"
+              required
             />
           </mat-form-field>
 
-          <button type="submit" [disabled]="!makeVolunteerForm.valid">Join US Now</button>
-
+          <button type="submit" [disabled]="!makeVolunteerForm.valid">
+            Join US Now
+          </button>
         </form>
       </div>
     </div>
   </div>
 </section>
 
+<div id="urget-dep" *ngIf="urgetDepView">
+  <div class="img">
+    <img src="{{ baseUrl + urgetDep.image_path }}" />
+  </div>
+  <div class="data">
+    <span class="close" (click)="closeUrgentData()"><i class="fas fa-times"></i></span>
 
-
+    <h4>{{ urgetDep.title }}</h4>
+    <p>{{ urgetDep.description }}</p>
+    <p class="num">
+      <span> Need : </span>
+      {{ urgetDep.need }}
+    </p>
+  </div>
+</div>

@@ -1,71 +1,40 @@
-
-
-
-
-
 <app-nav [breadcrumb]="currentbreadcrumb" class="mb-40"></app-nav>
 
-   
-
-     
-
-          <section class=" about-first-sec  mb-80 mt-4">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-6">
-
-     
-       
-        <h3 >{{achievementData.title}}</h3>
-
+<section class="about-first-sec mb-80 mt-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
         <h4 class="text-capitalize color-sec mb-40">
-          {{achievementData.intro}}        </h4>
+          {{ achievementData.title }}
+        </h4>
 
         <p>
-          {{achievementData.body}}  
+          {{ achievementData.intro }}
         </p>
       </div>
-      <div  class="col-md-6">
+      <div class="col-md-6">
         <div class="icon mt-2">
-          <img class="about_icon" src="../../../assets/images/about/about_icon.png" />
+          <img
+            class="about_icon"
+            src="../../../assets/images/about/about_icon.png"
+          />
         </div>
         <img src="../../../assets/images/achievement/1.jpg" />
       </div>
-      </div>
-      </div>
-    </section>
- <div class="container">
-   <div class="row">
-
-
-    <section class="mb-20 sec3 ">
-      <img src="../../../assets/images/Home/banner/banner.png" />
-    </section>
     </div>
-    <div class="row">
+  </div>
+</section>
+<div class="container">
+  <div class="row">
+    <section class="mb-20 sec3">
+      <img src="{{ baseUrl + achievementData.image_path }}" />
+    </section>
+  </div>
+  <div class="row">
     <section class="mb-80">
       <p class="px-4">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit
-        doloribus dolor quidem perspiciatis iste quam deserunt tenetur rerum
-        fugiat blanditiis. Dolor officiis optio voluptas tempore vero omnis
-        facere laudantium voluptatem.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo reprehenderit omnis at, ratione, nobis iure vero beatae tempore nihil dolorem debitis rerum assumenda similique corporis nemo magni exercitationem alias labore.
-      </p>
-      <p class="px-4">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit
-        doloribus dolor quidem perspiciatis iste quam deserunt tenetur rerum
-        fugiat blanditiis. Dolor officiis optio voluptas tempore vero omnis
-        facere laudantium voluptatem.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo reprehenderit omnis at, ratione, nobis iure vero beatae tempore nihil dolorem debitis rerum assumenda similique corporis nemo magni exercitationem alias labore.
-      </p>
-         <p class="px-4">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit
-        doloribus dolor quidem perspiciatis iste quam deserunt tenetur rerum
-        fugiat blanditiis. Dolor officiis optio voluptas tempore vero omnis
-        facere laudantium voluptatem.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo reprehenderit omnis at, ratione, nobis iure vero beatae tempore nihil dolorem debitis rerum assumenda similique corporis nemo magni exercitationem alias labore.
+        {{ achievementData.body }}
       </p>
     </section>
-  
   </div>
 </div>

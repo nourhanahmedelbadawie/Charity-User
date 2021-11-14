@@ -6,7 +6,7 @@ export const environment = {
   production: false
 };
 
-export let baseUrl='http://178.62.19.101:8888/'
+export let baseUrl='http://137.184.108.244:8081/'
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
