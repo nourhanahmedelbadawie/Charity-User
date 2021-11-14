@@ -4,15 +4,12 @@
   <div class="container">
     <div class="row">
       <div class="col-md-11">
-        <h3>Our New Achivement</h3>
+        <h3>Our Partner</h3>
 
-        <h4 class="text-capitalize color-sec mb-40">
-        {{PartnertData.data.title}}
-        
-        </h4>
+    
 
         <p>
-          {{PartnertData.data.intro}
+          {{PartnertData.intro}}
 
         </p>
       </div>
@@ -30,10 +27,12 @@
 <section class="logo-panner">
   <img src="../../../assets/images/logo.png" />
 </section>
-<div class="partner">
+<!-- <div class="partner">
   <div class="txt">
-    <h2>Our Partners</h2>
-    <p>its our honot to provide our partners with such special partner</p>
+    <h2>        {{PartnertData.title}}
+    </h2>
+    <p>        {{PartnertData.our_partner}}
+    </p>
   </div>
   <section class="grid_logos">
     <div class="col1">
@@ -105,4 +104,18 @@
         <img src="../../../assets/images/partners/9.png" />
       </figure>
   </section>
+</div> -->
+
+
+  <div class="container">
+    <div class="row">
+      <div class="logos">
+      <div class="logo_company" *ngFor="let item of PartnertDataInfo; let index=index">
+        <img src="{{ baseUrl +  item.company_name }}"   />
+    
+      </div>
+    </div>
+  </div>
+
+
 </div>

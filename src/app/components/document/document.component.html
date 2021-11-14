@@ -7,13 +7,11 @@
       <section class="responsive-doc flex about-first-sec align-items-md-start">
         <div>
           <h4 class="text-capitalize color-sec mb-40">
-        
-          {{DocStaticData.data.title}}
+            {{ DocStaticData.title }}
           </h4>
 
           <p>
-            {{DocStaticData.data.intro}}
-
+            {{ DocStaticData.intro }}
           </p>
         </div>
         <div>
@@ -38,25 +36,23 @@
               {{ item.intro }}
             </p>
             <div class="flex align-items-center mb-2">
-              <img src="src=../../../assets/images/documents/pdf.png" />
+              <img src="../../../assets/images/documents/pdf.png" />
               <h4>{{ item.title }}</h4>
-              <a href="{{ baseUrl + item.file_path }}" target="_blank"
-                >Download
-              </a>
+              <a (click)="setDocumentDownloaded(item)"> Download </a>
             </div>
           </div>
 
-          <div class="col-md-6 col-sm-12">
+          <div class="col-md-6 col-sm-12 image">
             <div>
-              <img src="{{ baseUrl + item.image_path }}" />
+              <img class="docs_image" src="{{ baseUrl + item.image_path }}" />
             </div>
           </div>
         </div>
 
-        <div class="col-md-12 col-sm-12 d-flex" *ngIf="i % 2 === 0">
+        <div class="col-md-12 col-sm-12 d-flex" *ngIf="i % 2 !== 0">
           <div class="col-md-6 col-sm-12">
             <div>
-              <img src="{{ baseUrl + item.image_path }}" />
+              <img class="docs_image" src="{{ baseUrl + item.image_path }}" />
             </div>
           </div>
           <div class="col-md-6 col-sm-12">
@@ -67,13 +63,96 @@
             <div class="flex align-items-center mb-2">
               <img src="src=../../../assets/images/documents/pdf.png" />
               <h4>{{ item.title }}</h4>
-              <a href="{{ baseUrl + item.file_path }}" target="_blank"
-                >Download
-              </a>
+              <!-- <a href="{{ baseUrl + item.file_path }}" target="_blank"
+                >
+              </a> -->
+              <a (click)="setDocumentDownloaded(item)"> Download </a>
             </div>
           </div>
         </div>
       </div>
     </div>
   </section>
+  <div class="doc_download" *ngIf="viewModal">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">
+            Download document
+          </h5>
+          <button type="button" (click)="viewModal = close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form
+          [formGroup]="downloadForm"
+          class="form-container"
+          (ngSubmit)="sendDownloadForm()"
+        >
+          <div class="modal-body">
+            <div>
+              <div class="form-group">
+                <label>Name </label>
+                <input
+                  formControlName="name"
+                  matInput=""
+                  placeholder="Name"
+                  type="text"
+                  required
+                  class="form-control"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="exampleInputEmail1">Email </label>
+                <input
+                  formControlName="email"
+                  matInput=""
+                  placeholder="Email"
+                  pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}"
+                  type="email"
+                  required
+                  type="email"
+                  class="form-control"
+                  id="exampleInputEmail1"
+                  aria-describedby="emailHelp"
+                />
+              </div>
+
+              <div class="form-group">
+                <label>Phone Number </label>
+                <input
+                  formControlName="phone"
+                  formControlName="phone"
+                  matInput=""
+                  placeholder="Phone Number"
+                  type="number"
+                  required
+                  maxlength="10"
+                  class="form-control"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              (click)="viewModal = close"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              type="submit"
+              class="btn btn-primary"
+              [disabled]="submitClicked"
+            >
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>

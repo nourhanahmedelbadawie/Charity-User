@@ -1,6 +1,6 @@
 <div
   class="header-page"
-  [ngStyle]="{ 'background-image': 'url(' + breadcrumb.bg + ')' }"
+  [ngStyle]="{ 'background-image':  breadcrumb?.bg ? 'url(' + breadcrumb.bg + ')' : 'url(' + '../assets/images/demo_image.jpg' + ')' }"
 >
   <div class="navbar-header">
     <nav class="navbar navbar-expand-lg navbar-light">

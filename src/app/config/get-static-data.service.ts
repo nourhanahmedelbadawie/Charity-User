@@ -77,12 +77,28 @@ export class GetStaticDataService {
   );
 
 }
+//Donation
 
+getAllDepartment(): Observable<any> {
+  return this.http.get<any>(`${this.configUrl}/departments/all_departments`, httpOptions)    
+.pipe(
+  catchError(this.handleError)
+);
+
+}
 
 // get Partner Data 
 
 getPartnerData(): Observable<any> {
   return this.http.get<any>(`${this.configUrl}/getStaticPartners/`, httpOptions)    
+.pipe(
+  catchError(this.handleError)
+);
+
+}
+
+getPartnerDataInfo(): Observable<any> {
+  return this.http.get<any>(`${this.configUrl}/partners/get_all_partners/`, httpOptions)    
 .pipe(
   catchError(this.handleError)
 );
