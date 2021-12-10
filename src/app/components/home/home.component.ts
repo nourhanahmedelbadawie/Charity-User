@@ -34,7 +34,7 @@ export class HomeComponent implements OnInit {
       this.currentbreadcrumb = {
         title: `${this.homeStaticData.HomeScreenMain.title}`,
         subtitle: this.homeStaticData.HomeScreenMain.subtitle,
-        bg: `${baseUrl}/${this.homeStaticData.HomeScreenMain.cover_path[0]}`,
+        bg: `${baseUrl}${this.homeStaticData.HomeScreenMain.cover_path[0]}`,
 
         link: "",
         home: true,

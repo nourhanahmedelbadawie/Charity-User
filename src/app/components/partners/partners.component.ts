@@ -17,12 +17,11 @@ export class PartnersComponent implements OnInit {
          // get Partner  Data 
          this.getStaticDataService.getPartnerData(
           ).subscribe(data=>{
-           this.PartnertData= (data)
-           console.log(this.PartnertData)
+           this.PartnertData= data.data
            this.currentbreadcrumb = {
             title: "Partners",
             subtitle: "Partners",
-            bg:`${baseUrl}${this.PartnertData.data.cover_path}`,
+            bg:`${baseUrl}${this.PartnertData.cover_path}`,
             link: "/partners",
           };
        

@@ -1,41 +1,69 @@
-
 .about-first-sec {
-    > div {
-      width: 50%;
-    }
-    div img {
-      width: 50%;
-      display: block;
-      margin: 0px auto;
-      border-radius: 10px;
-      @media screen and (max: width 500px) {
-        width: 100%;
-      }
+  > div {
+    width: 50%;
+  }
+  div img {
+    width: 50%;
+    display: block;
+    margin: 0px auto;
+    border-radius: 10px;
+    @media screen and (max-width:500px) {
+      width: 100%;
     }
   }
-  .doc{
-    .flex {
-      img{
-        width: 32px;
-        margin-right: 10px;      }
+}
+.doc {
+  .flex {
+    img {
+      width: 32px;
+      margin-right: 10px;
     }
-    a{
-      color: #f92b20 !important;
-      font-weight: bold;
-      
+  }
+  a {
+    color: #f92b20 !important;
+    font-weight: bold;
+
     margin-left: 10px;
-  
-  
-  
-    }
   }
-  .responsive-doc{
-    @media screen and (max-width:600px) {
-      .row.doc{
+}
+.responsive-doc {
+  @media screen and (max-width: 600px) {
+    .row.doc {
       border-bottom: 4px dotted #28246b;
       padding-bottom: 60px;
       margin: 0px 4px 60px 4px;
-    
     }
   }
+}
+main{
+  z-index: 1;
+}
+.docs_image{
+    width: 280px;
+    height: 240px;
+    object-fit: cover;
+    object-position: center;
+    margin: 4px;
+
+}
+.doc_download {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 294px;
+  
+  * {
+    background-color: rgb(40, 37, 107);
+    color: white;
+    box-shadow: none;
   }
+  input {
+    border: 1px solid white;
+    padding: 10px;
+    margin-bottom: 5px;
+    ::placeholder {
+      color: white;
+    }
+  }
+}

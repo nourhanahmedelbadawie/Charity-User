@@ -7,7 +7,9 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
   @Input() breadcrumb
-  constructor() { }
+  constructor() { 
+    console.log(this.breadcrumb)
+  }
 
   ngOnInit() {
   }

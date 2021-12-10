@@ -32,7 +32,7 @@ nav {
   li a {
     color: white !important;
     &:hover {
-      color: $sci-color !important;
+      text-decoration: underline;    
     }
   }
   .navbar-expand-lg {
@@ -59,6 +59,7 @@ nav {
   background-size: cover;
   height: 85vh;
   width: 100%;
+  background-color: #27246a;
   .row,
   .container {
     height: 100%;
@@ -104,8 +105,7 @@ nav {
     background: #27246a;
     padding: 10px;
     li a:hover {
-      color: white !important;
-    }
+text-decoration: underline;    }
     > ul:nth-of-type(2) {
       display: flex;
       flex-direction: row;
