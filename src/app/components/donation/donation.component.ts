@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatFormFieldControl } from '@angular/material';
+import { ConfigService } from 'src/app/config/config.service';
 
 @Component({
   selector: 'app-donation',
@@ -25,7 +26,7 @@ export class DonationComponent implements OnInit {
   ngOnInit() {
   }
  
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder , private configService:ConfigService) {}
 
   profileForm = this.fb.group({
     name: [''],
@@ -79,4 +80,27 @@ export class DonationComponent implements OnInit {
 
   });
 
+  
+  donationForm = this.fb.group({
+    email:  ['',[Validators.required, Validators.email]],
+
+
+
+  });
+
+ 
+  senddonationForm(){
+    this.configService.sendPayment( JSON.stringify(this.donationForm.value))
+    .subscribe((data: any) =>{
+      console.log(data)
+      this.donationForm .reset()
+
+
+    }  ,(err)=>{
+      this.donationForm.reset()
+
+      
+
+    })
+  }
 }

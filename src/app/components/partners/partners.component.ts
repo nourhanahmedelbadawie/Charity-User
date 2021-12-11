@@ -1,6 +1,6 @@
+import { baseUrl } from './../../../environments/environment';
 import { Component, OnInit } from "@angular/core";
 import { GetStaticDataService } from "src/app/config/get-static-data.service";
-import { baseUrl } from "src/environments/environment";
 
 @Component({
   selector: "app-partners",
@@ -9,11 +9,14 @@ import { baseUrl } from "src/environments/environment";
 })
 export class PartnersComponent implements OnInit {
   PartnertData: any;
+  PartnertDataInfo: any;
+  baseUrl
+
   currentbreadcrumb: { title: string; subtitle: string; bg: string; link: string; };
   constructor( private getStaticDataService:GetStaticDataService ) { }
 
   ngOnInit() {
-
+this.baseUrl=baseUrl
          // get Partner  Data 
          this.getStaticDataService.getPartnerData(
           ).subscribe(data=>{
@@ -27,6 +30,11 @@ export class PartnersComponent implements OnInit {
        
 
      })
+
+     this.getStaticDataService.getPartnerDataInfo(
+      ).subscribe(data=>{
+   this.PartnertDataInfo= data
+ })
      
   }
   

@@ -89,6 +89,14 @@ getPartnerData(): Observable<any> {
 
 }
 
+getPartnerDataInfo(): Observable<any> {
+  return this.http.get<any>(`${this.configUrl}/partners/get_all_partners/`, httpOptions)    
+.pipe(
+  catchError(this.handleError)
+);
+
+}
+
 
 
   private handleError(error: HttpErrorResponse) {

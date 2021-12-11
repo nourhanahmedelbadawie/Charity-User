@@ -9,6 +9,9 @@
 .mat-progress-bar {
   height: 8px !important;
 }
+a{
+  cursor: pointer;
+}
 .donation-form,
 .contact-form {
   * {
@@ -31,6 +34,7 @@
       width: 100%;
     }
   }
+ 
   .mat-form-field-appearance-outline
     .mat-form-field-outline-thick
     .mat-form-field-outline-end,

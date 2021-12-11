@@ -25,7 +25,6 @@ export class AboutComponent implements OnInit {
 
     this.getStaticDataService.getAboutData().subscribe((data) => {
       this.aboutData = data;
-      console.log("this.aboutData");
 
       this.currentbreadcrumb = {
         title: "about",

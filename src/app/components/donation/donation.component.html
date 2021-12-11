@@ -84,7 +84,7 @@
     <mat-horizontal-stepper>
       <mat-step label="Personal information">
         <mat-card>
-          <form [formGroup]="profileForm" class="form-container ">
+          <form [formGroup]="profileForm" class="form-container">
             <div class="row">
               <div class="col-md-6">
                 <mat-form-field appearance="outline">
@@ -133,7 +133,9 @@
                 </mat-form-field>
               </div>
             </div>
-            <button type="button" mat-button matStepperNext class="btn">Next</button>
+            <button type="button" mat-button matStepperNext class="btn">
+              Next
+            </button>
           </form>
         </mat-card>
       </mat-step>
@@ -142,10 +144,28 @@
         <div class="payment-selection">
           <mat-tab-group>
             <mat-tab label="">
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla
-                eaque ad ullam laboriosam? Cupiditate alias perspiciatis
-              </p>
+              <div class="donation-form">
+                <mat-card>
+                  <form
+                    [formGroup]="donationForm"
+                    class="form-container donation-form"
+                    (ngSubmit)="senddonationForm()"
+                  >
+                    <mat-form-field appearance="outline">
+                      <mat-label>Email</mat-label>
+
+                      <input
+                        formControlName="email"
+                        matInput=""
+                        placeholder="Email"
+                        type="email"
+                        required
+                      />
+                    </mat-form-field>
+                    <button type="=" submit class="main-btn">submit</button>
+                  </form>
+                </mat-card>
+              </div>
             </mat-tab>
             <mat-tab label="">
               <form [formGroup]="visaPayment" class="form-container">
@@ -249,9 +269,7 @@
 
         <button mat-button matStepperPrevious>Back</button>
         <mat-card-actions>
-          <button (click)="onSubmit()" class="btn">
-            Save
-          </button>
+          <button (click)="onSubmit()" class="btn">Save</button>
         </mat-card-actions>
       </mat-step>
     </mat-horizontal-stepper>
