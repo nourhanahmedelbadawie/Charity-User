@@ -1,106 +1,100 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MatFormFieldControl } from '@angular/material';
-import { ConfigService } from 'src/app/config/config.service';
+import { Component, OnInit } from "@angular/core";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { MatFormFieldControl } from "@angular/material";
+import { ConfigService } from "../../config/config.service";
+import { GetStaticDataService } from "../../config/get-static-data.service";
 
 @Component({
-  selector: 'app-donation',
-  templateUrl: './donation.component.html',
-  styleUrls: ['./donation.component.scss']
+  selector: "app-donation",
+  templateUrl: "./donation.component.html",
+  styleUrls: ["./donation.component.scss"],
 })
 export class DonationComponent implements OnInit {
-  
-
-  currentbreadcrumb:{}={
-    title:"Donation",
-    subtitle:"lorem ipsum",
-    bg:"../../../assets/images/about/about_manner.jpg",
-    link:"/doc"
-  }
+  currentbreadcrumb: {} = {
+    title: "Donation",
+    subtitle: "lorem ipsum",
+    bg: "../../../assets/images/about/about_manner.jpg",
+    link: "/doc",
+  };
 
   isLinear = false;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
- 
+  allDepartment;
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  constructor(
+    private fb: FormBuilder,
+    private configService: ConfigService,
+    private getStaticDataService: GetStaticDataService
+  ) {
+    this.getStaticDataService.getAllDepartment().subscribe((res) => {
+      this.allDepartment = res;
+      console.log(this.allDepartment);
+    });
   }
- 
-  constructor(private fb: FormBuilder , private configService:ConfigService) {}
 
   profileForm = this.fb.group({
-    name: [''],
-    email: [''],
-    phone1: [''],
-    phone2: ['']
+    name: ["", Validators.required],
+    email: ["", Validators.required, Validators.email],
+    phone: ["", Validators.required],
+    phone1: [""],
   });
-  visaPayment= this.fb.group({
-    donAmount: [''],
-    cardNum: [''],
-    nameCard: [''],
-    expDate: [''] ,
-    cvv: [''] 
 
+  donationForm = this.fb.group({
+    amount: ["", Validators.required],
+    department_id: ["", Validators.required],
+  });
+  visaPayment = this.fb.group({
+    donAmount: [""],
+    cardNum: [""],
+    nameCard: [""],
+    expDate: [""],
+    cvv: [""],
   });
   items = [
-    { label: 'LE', value: 'LE' },
-    { label: '$', value: '$' },
-    { label: '€', value: '€' }
-   
+    { label: "LE", value: "LE" },
+    { label: "$", value: "$" },
+    { label: "€", value: "€" },
   ];
 
-  selected = [
-    'LE'
-  ];
+  selected = ["LE"];
 
-  allSelected = [
-    'yellow',
-    'blue',
-    'green',
-    'pink',
-    'red'
-  ];
+  allSelected = ["yellow", "blue", "green", "pink", "red"];
 
   onSelectionChange(ev) {
-    
-    console.log('Change', ev)
+    console.log("Change", ev);
   }
 
   trackBy(model) {
     return model.value;
   }
-  onSubmit() {
-   console.log('form data is ', this.profileForm.value);
-  }
 
-  
-
-  fawryForm= this.fb.group({
-    name: ['']
-
+  fawryForm = this.fb.group({
+    name: [""],
   });
 
-  
-  donationForm = this.fb.group({
-    email:  ['',[Validators.required, Validators.email]],
-
-
-
-  });
-
- 
-  senddonationForm(){
-    this.configService.sendPayment( JSON.stringify(this.donationForm.value))
-    .subscribe((data: any) =>{
-      console.log(data)
-      this.donationForm .reset()
-
-
-    }  ,(err)=>{
-      this.donationForm.reset()
-
-      
-
-    })
+  sendDonationForm() {
+    this.configService
+      .sendPayment(
+        JSON.stringify({
+          ...this.donationForm.value,
+          ...this.profileForm.value,
+          payment_method_id: 2,
+          department_id:1
+        })
+      )
+      .subscribe(
+        (data: any) => {
+          console.log(data);
+          this.donationForm.reset();
+          this.profileForm.reset();
+        },
+        (err) => {
+          this.donationForm.reset();
+          this.profileForm.reset();
+        }
+      );
   }
 }

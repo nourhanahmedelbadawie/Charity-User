@@ -13,7 +13,22 @@
   }
 }
 .doc {
+  @media screen and (max-width:769px) {
+    &:nth-child(odd) {
+.image{
+  order: -1;
+}
+    }
+    .d-flex{
+      display: flex;
+      flex-direction: column ;
+      border-bottom: 1px solid #d3d4d7;
+
+    
+    }
+  }
   .flex {
+ 
     img {
       width: 32px;
       margin-right: 10px;

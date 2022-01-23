@@ -14,8 +14,8 @@ export class DocumentComponent implements OnInit {
   files: [] = [];
   DocStaticData;
   baseUrl = baseUrl;
-  viewModal=false
-  submitClicked=false
+  viewModal = false;
+  submitClicked = false;
   currentbreadcrumb: {
     title: string;
     subtitle: string;
@@ -50,11 +50,9 @@ export class DocumentComponent implements OnInit {
     };
   }
   // download pdf
-  setDocumentDownloaded(item){
-    this.documentDownloaded =item
-    this.viewModal=true;
-    
-
+  setDocumentDownloaded(item) {
+    this.documentDownloaded = item;
+    this.viewModal = true;
   }
   downloadForm = this.fb.group({
     name: ["", Validators.required],
@@ -63,14 +61,17 @@ export class DocumentComponent implements OnInit {
   });
 
   sendDownloadForm() {
-    this.submitClicked=true
-    this.configService.downloadDocument(
-        JSON.stringify({ ...this.downloadForm.value, document_id:this.documentDownloaded.id })
-      ).subscribe(
+    this.submitClicked = true;
+    this.configService
+      .downloadDocument({
+        ...this.downloadForm.value,
+        document_id: this.documentDownloaded.id,
+      })
+      .subscribe(
         (data: any) => {
           this.downloadForm.reset();
-          this.viewModal=false
-          this.submitClicked=false
+          this.viewModal = false;
+          this.submitClicked = false;
 
           Swal.fire({
             title: "success",
@@ -78,14 +79,18 @@ export class DocumentComponent implements OnInit {
             icon: "success",
             confirmButtonText: "Ok",
           }).then((data) => {
-            window.open(`${baseUrl + this.documentDownloaded.file_path}`, "_blank", "fullscreen=yes");
+            window.open(
+              `${baseUrl + this.documentDownloaded.file_path}`,
+              "_blank",
+              "fullscreen=yes"
+            );
             return false;
           });
         },
         (err) => {
           this.downloadForm.reset();
-          this.viewModal=false
-          this.submitClicked=false
+          this.viewModal = false;
+          this.submitClicked = false;
 
           Swal.fire({
             title: "Error",

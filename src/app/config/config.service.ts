@@ -39,7 +39,6 @@ export class ConfigService {
       .pipe(catchError(this.handleError));
   }
   downloadDocument(hero): Observable<any> {
-    console.log(hero);
     return this.http
       .post<any>(`${this.configUrl}/documents/download_doc/`, hero, httpOptions)
       .pipe(catchError(this.handleError));
@@ -47,7 +46,7 @@ export class ConfigService {
 
   sendPayment(hero) {
     return this.http
-      .post<any>(`${this.configUrl}/pay/707624/28/`, hero, httpOptions)
+      .post<any>(`${this.configUrl}/donations/makeDonation/`, hero, httpOptions)
       .pipe(catchError(this.handleError));
   }
 
