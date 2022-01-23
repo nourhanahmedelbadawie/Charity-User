@@ -84,7 +84,11 @@
     <mat-horizontal-stepper>
       <mat-step label="Personal information">
         <mat-card>
-          <form [formGroup]="profileForm" class="form-container">
+          <form
+            [formGroup]="profileForm"
+            class="form-container"
+            (ngSubmit)="sendProfileForm()"
+          >
             <div class="row">
               <div class="col-md-6">
                 <mat-form-field appearance="outline">
@@ -115,7 +119,7 @@
                   <mat-label>Phone</mat-label>
 
                   <input
-                    formControlName="phone1"
+                    formControlName="phone"
                     matInput=""
                     placeholder="Phone"
                   />
@@ -126,14 +130,14 @@
                   <mat-label>Phone</mat-label>
 
                   <input
-                    formControlName="phone2"
+                    formControlName="phone1"
                     matInput=""
                     placeholder="Phone"
                   />
                 </mat-form-field>
               </div>
             </div>
-            <button type="button" mat-button matStepperNext class="btn">
+            <button type="submit" mat-button matStepperNext class="btn">
               Next
             </button>
           </form>
@@ -149,16 +153,27 @@
                   <form
                     [formGroup]="donationForm"
                     class="form-container donation-form"
-                    (ngSubmit)="senddonationForm()"
+                    (ngSubmit)="sendDonationForm()"
                   >
+                    <mat-form-field appearance="fill">
+                      <mat-label>Department</mat-label>
+                      <mat-select formControlName="department_id">
+                        <mat-option
+                          *ngFor="let deparment of allDepartment"
+                          [value]="deparment.id"
+                        >
+                          {{ deparment.description }}
+                        </mat-option>
+                      </mat-select>
+                    </mat-form-field>
                     <mat-form-field appearance="outline">
-                      <mat-label>Email</mat-label>
+                      <mat-label>Amount</mat-label>
 
                       <input
-                        formControlName="email"
+                        formControlName="amount"
                         matInput=""
-                        placeholder="Email"
-                        type="email"
+                        placeholder="Amount"
+                        type="number"
                         required
                       />
                     </mat-form-field>

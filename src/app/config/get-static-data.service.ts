@@ -77,7 +77,15 @@ export class GetStaticDataService {
   );
 
 }
+//Donation
 
+getAllDepartment(): Observable<any> {
+  return this.http.get<any>(`${this.configUrl}/departments/all_departments`, httpOptions)    
+.pipe(
+  catchError(this.handleError)
+);
+
+}
 
 // get Partner Data 
 
