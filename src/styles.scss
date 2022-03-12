@@ -5,6 +5,7 @@
 
 @import "../src/assets/style/base.scss";
 
+
 // overWrite Angular material
 .mat-progress-bar {
   height: 8px !important;
@@ -181,4 +182,16 @@ footer .mat-form-field-infix {
 .mat-progress-spinner circle,
 .mat-spinner circle {
   stroke: $pri-color;
+}
+.breadcrumb{
+  background-color: transparent !important;
+}
+.select .mat-form-field-wrapper {
+  border-radius: 55px;
+  border: 1px solid #7cc249;
+  overflow: hidden;
+  padding-bottom: 0px !important;
+  .mat-form-field-underline{
+    display: none !important;
+  }
 }

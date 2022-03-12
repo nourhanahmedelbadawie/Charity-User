@@ -1,24 +1,26 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from "@angular/core";
+import { baseUrl } from "src/environments/environment";
 
 @Component({
-  selector: 'app-nav',
-  templateUrl: './nav.component.html',
-  styleUrls: ['./nav.component.scss']
+  selector: "app-nav",
+  templateUrl: "./nav.component.html",
+  styleUrls: ["./nav.component.scss"],
 })
 export class NavComponent implements OnInit {
-  @Input() breadcrumb
-  constructor() { 
-    console.log(this.breadcrumb)
-  }
+  @Input() breadcrumb;
+  baseUrl = baseUrl;
+
 
   ngOnInit() {
+ 
   }
-  goDown(){
+  
+  goDown() {
+console.log(this.breadcrumb)
     window.scroll({
-      top: 800, 
-      left: 0, 
-      behavior: 'smooth' 
-     });
+      top: 800,
+      left: 0,
+      behavior: "smooth",
+    });
   }
-
 }

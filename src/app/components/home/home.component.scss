@@ -94,7 +94,7 @@ height: auto;
       }
     }
 
-    @media screen and (max: width 500px) {
+    @media screen and (max-width: 500px) {
       width: 100%;
     }
   }
@@ -190,6 +190,7 @@ background-size: cover;
   background-image: url("../../../assets/images/Home/banner/banner.png");
   background-position: center;
   background-repeat: no-repeat;
+  background-size: cover;
   button{
       width: 100%;
       max-width: 220px;

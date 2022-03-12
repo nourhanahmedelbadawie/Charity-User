@@ -1,4 +1,5 @@
 <app-nav [breadcrumb]="currentbreadcrumb"></app-nav>
+
 <section class="home-sec2 bg-blue mb-80">
   <div class="container">
     <div class="row">
@@ -54,11 +55,11 @@
       <div class="col-md-6 col-sm-12">
         <h2>About us</h2>
         <h4 class="text-capitalize color-sec mb-40">
-          {{ homeStaticData.AboutUsSection.title }}
+          {{ homeStaticData?.AboutUsSection?.title }}
         </h4>
 
         <p>
-          {{ homeStaticData.AboutUsSection.body }}
+          {{ homeStaticData?.AboutUsSection?.body }}
         </p>
       </div>
       <div class="col-md-6 col-sm-12">
@@ -108,36 +109,86 @@
       </div>
     </div>
     <div class="row">
-      <div class="flex justify-content-between align-items-center">
+      <div>
         <form
           [formGroup]="makeVolunteerForm"
-          class="form-container donation-form flex justify-content-between"
+          class="form-container donation-form"
           (ngSubmit)="sendVolunteer()"
         >
-          <mat-form-field appearance="outline">
-            <mat-label>Enter Full Name </mat-label>
+          <div
+            class="field mb-3 flex justify-content-around align-items-center"
+          >
+            <mat-form-field appearance="outline">
+              <mat-label>Enter Full Name </mat-label>
 
-            <input
-              formControlName="name"
-              matInput=""
-              placeholder="Enter Full Name"
-              type="text"
-              required
-            />
-          </mat-form-field>
+              <input
+                formControlName="name"
+                matInput=""
+                placeholder="Enter Full Name"
+                type="text"
+                required
+              />
+            </mat-form-field>
 
-          <mat-form-field appearance="outline">
-            <mat-label>Enter Your Email</mat-label>
+            <mat-form-field appearance="outline">
+              <mat-label>Enter Your Email</mat-label>
 
-            <input
-              formControlName="email"
-              matInput=""
-              placeholder="Enter Your Email"
-              pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}"
-              type="email"
-              required
-            />
-          </mat-form-field>
+              <input
+                formControlName="email"
+                matInput=""
+                placeholder="Enter Your Email"
+                pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}"
+                type="email"
+                required
+              />
+            </mat-form-field>
+          </div>
+
+          <div
+            class="field mb-3 flex justify-content-around align-items-center"
+          >
+            <mat-form-field appearance="outline">
+              <mat-label>Enter Phone </mat-label>
+
+              <input
+                formControlName="phone"
+                matInput=""
+                placeholder="Enter Phone"
+                type="number"
+                required
+              />
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Enter Your Region</mat-label>
+
+              <input
+                formControlName="region"
+                matInput=""
+                placeholder="Enter Your Region"
+                type="text"
+                required
+              />
+            </mat-form-field>
+          </div>
+          <div
+            class="field mb-3 m-auto flex justify-content-center align-items-center select"
+          >
+       
+
+            <mat-form-field appearance="fill">
+              <mat-label>What do you want to volunteer?</mat-label>
+              <mat-select
+                formControlName="activity"
+                matInput=""
+                placeholder="What do you want to volunteer?"
+              >
+                <mat-option *ngFor="let activity of activities" [value]="activity">
+                  {{ activity }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
 
           <button type="submit" [disabled]="!makeVolunteerForm.valid">
             Join US Now
@@ -150,16 +201,18 @@
 
 <div id="urget-dep" *ngIf="urgetDepView">
   <div class="img">
-    <img src="{{ baseUrl + urgetDep.image_path }}" />
+    <img src="{{ baseUrl + urgetDep?.image_path }}" />
   </div>
   <div class="data">
-    <span class="close" (click)="closeUrgentData()"><i class="fas fa-times"></i></span>
+    <span class="close" (click)="closeUrgentData()"
+      ><i class="fas fa-times"></i
+    ></span>
 
-    <h4>{{ urgetDep.title }}</h4>
-    <p>{{ urgetDep.description }}</p>
+    <h4>{{ urgetDep?.title }}</h4>
+    <p>{{ urgetDep?.description }}</p>
     <p class="num">
       <span> Need : </span>
-      {{ urgetDep.need }}
+      {{ urgetDep?.need }}
     </p>
   </div>
 </div>

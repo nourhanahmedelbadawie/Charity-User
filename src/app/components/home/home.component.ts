@@ -25,28 +25,29 @@ export class HomeComponent implements OnInit {
   baseUrl = baseUrl;
   hideRequiredControl = new FormControl(false);
   floatLabelControl = new FormControl("auto");
-
+  activities = ["act1", "act2", "act3", "other"];
   ngOnInit() {
     // get Home Data
-    this.getStaticDataService.getHomeData().subscribe((data) => {
-      this.homeStaticData = data;
-      console.log(this.homeStaticData)
-      // breadcrumb
-      this.currentbreadcrumb = {
-        title: `${this.homeStaticData.HomeScreenMain.title}`,
-        subtitle: this.homeStaticData.HomeScreenMain.subtitle,
-        bg: `${baseUrl}${this.homeStaticData.HomeScreenMain.cover_path[0]}`,
+    this.getStaticDataService.getHomeData().subscribe(
+      (data) => {
+        this.homeStaticData = data;
+        // breadcrumb
+        this.currentbreadcrumb = {
+          title: `${this.homeStaticData.HomeScreenMain.title}`,
+          subtitle: this.homeStaticData.HomeScreenMain.subtitle,
+          bg: this.homeStaticData.HomeScreenMain.cover_path,
 
-        link: "",
-        home: true,
-      };
-    }, (err)=>console.log(err));
+          link: "",
+          home: true,
+        };
+      },
+      (err) => console.log(err)
+    );
 
     // get Achivement  Data
     this.getStaticDataService.getAchcData().subscribe((data) => {
       this.achievementData = data;
-      console.log(this.achievementData);
-    } )
+    });
 
     //get Urgent Data
 
@@ -70,6 +71,9 @@ export class HomeComponent implements OnInit {
   makeVolunteerForm = this.fb.group({
     name: ["", Validators.required],
     email: ["", [Validators.required, Validators.email]],
+    phone: ["", Validators.required],
+    region: ["", Validators.required],
+    activity: ["", Validators.required],
   });
   sendDonar() {
     console.log(this.makeDonationForm.valid);
@@ -127,9 +131,7 @@ export class HomeComponent implements OnInit {
         }
       );
   }
-  closeUrgentData()
-  {
-    this.urgetDepView=false
+  closeUrgentData() {
+    this.urgetDepView = false;
   }
-
 }
