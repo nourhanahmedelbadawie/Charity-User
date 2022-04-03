@@ -70,13 +70,8 @@
               "browserTarget": "future-protectors:build:production"
             }
           }
-        },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "future-protectors:build"
-          }
-        },
+        }
+     ,
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {

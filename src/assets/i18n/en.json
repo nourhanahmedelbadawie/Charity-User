@@ -1,0 +1,42 @@
+{
+    "nav": {
+        "home":"Home",
+        "aboutus": "About Us",
+        "documents":"Documents",
+        "partners":"Partners",
+        "contactUs": "Contact Us"
+    },
+    "home": {
+        "header": "hello",
+        "description": "lorem ipsum..",
+        "makeDonation": "Make a Donation",
+        "BecomeDoner": "Become a Doner",
+        "AboutUs": "About us",
+        "lastAchievemnt": "Last achievemnt",
+        "JoinUs": "Join Us",
+        "JoinUsNow": "  Join US Now",
+        "wantBecomeaVolunteer": "What do you want to volunteer?",
+        "BecomeaVolunteer": "Become a Volunteer"
+    },
+    "general": {
+        "formName": "Name",
+        "formEmail": "Email",
+        "formPhone": "Phone",
+        "formRegion": "Regoin"
+    },
+    "footer": {
+        "footerTxt": "lorem",
+        "newsLetter": "newsLetter through",
+        "whatsapp": "whatsapp",
+        "telegram": "telegram",
+        "subscribe": "Subscribe",
+        "help": "Help us",
+        "contactName": "test test",
+        "contactaddress": "12 test test",
+        "contactEmail": "test@gmail.com"
+    }
+    ,
+     "about" : {
+         "Whychooseus" :"Why choose us"
+     }
+}

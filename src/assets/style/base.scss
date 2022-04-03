@@ -1,4 +1,6 @@
 @import "./variables.scss";
+@import "./arabicStyle.scss";
+
 @font-face {
   font-family: PoppinsMed;
   src: url(./assets/fonts/Poppins-Medium.ttf);
@@ -7,7 +9,14 @@
   font-family: PoppinsBold;
   src: url(./assets/fonts/Poppins-Bold.ttf);
 }
-
+@font-face {
+  font-family: CairoReg;
+  src: url(./assets/fonts/Cairo-Regular.ttf);
+}
+@font-face {
+  font-family: CairoBold;
+  src: url(./assets/fonts/Cairo-Bold.ttf);
+}
 
 // normalize
 
@@ -62,10 +71,14 @@ body {
   margin: 0;
   font-family:PoppinsMed
 }
+
 h2  , h3 ,h4 ,h5{
   font-family: PoppinsBold;
 
 }
+
+
+
 // general classes
 .pt-20 {
   padding-top: 20px;

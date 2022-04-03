@@ -1,0 +1,38 @@
+{
+    "nav": {
+        "home":"الرئيسيه",
+        "documents":"ملفات",
+        "aboutus": "نحن",
+        "contactUs": "اتصل بينا",
+        "partners": "عملاء"
+    },
+    "home": {
+        "header": "مرحبا",
+        "description": "لوريم ",
+        "makeDonation": "تبرع",
+        "BecomeDoner": "كون متبرع",
+        "AboutUs": "نحن",
+        "lastAchievemnt": "الانجازات الاخيره",
+        "JoinUs": "انضم لنا",
+        "JoinUsNow": "  انضم لنا الا",
+        "wantBecomeaVolunteer": "هل تود ان تصبح متطوع",
+        "BecomeaVolunteer": "كون متطوع"
+    },
+    "general": {
+        "formName": "الاسم",
+        "formEmail": "الايميل",
+        "formPhone": "المحمول",
+        "formRegion": "المنطقه"
+    },
+    "footer": {
+        "footerTxt": "لوريم",
+        "newsLetter": "رسالة من خلال",
+        "whatsapp": "واتساب",
+        "telegram": "التليجرام",
+        "subscribe": "إشترك",
+        "help": "ساعدنا",
+        "contactName": "لوريم لوريم",
+        "contactaddress": "12 test test",
+        "contactEmail": "test@gmail.com"
+    }
+}

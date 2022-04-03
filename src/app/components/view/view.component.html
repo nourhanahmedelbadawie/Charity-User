@@ -13,48 +13,51 @@
             <div class="footer-text">
               <img src="../../../assets/images/logo_white.png" />
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Veritatis accusantium quisquam, praesentium excepturi esse
-                molestiae dignissimos
+                {{ "footer.footerTxt" | translate }}
               </p>
             </div>
             <div class="links">
               <div class="d-flex">
                 <div>
-                  <a class="nav-link active" routerLink="/">Home</a>
-                  <a class="nav-link active" routerLink="/about ">About</a>
+                  <a class="nav-link active" routerLink="/">
+                    {{ "nav.home" | translate }}
+                  </a>
+                  <a class="nav-link active" routerLink="/about ">
+                    {{ "nav.aboutus" | translate }}
+                  </a>
 
-                  <a class="nav-link active" routerLink="/contact">Contact us</a>
+                  <a class="nav-link active" routerLink="/contact">
+                    {{ "nav.contactUs" | translate }}
+                  </a>
 
-                  <a class="nav-link active" routerLink="/partners">partners</a>
+                  <a class="nav-link active" routerLink="/partners">
+                    {{ "nav.partners" | translate }}</a
+                  >
                 </div>
 
                 <div class="links-inside">
-                  <a class="nav-link active color-red" routerLink="/"
-                    >Help us</a
+                  <a class="nav-link active color-red" routerLink="/">
+                    {{ "footer.help" | translate }}</a
                   >
-                  <a class="nav-link active" routerLink="/">Make A Donation</a>
-                  <a class="nav-link active" routerLink="/"
-                    >Join us As Volunteer</a
-                  >
+                  <a class="nav-link active" routerLink="/">{{
+                    "home.makeDonation" | translate
+                  }}</a>
+                  <a class="nav-link active" routerLink="/">{{
+                    "home.BecomeaVolunteer" | translate
+                  }}</a>
                 </div>
                 <div class="links-inside">
-                  <p class="color-red">Contact us</p>
-                  <p>012345678910</p>
+                  <p class="color-red">{{ "nav.contactUs" | translate }}</p>
+                  <p>{{ "footer.contactName" | translate }}</p>
 
-                  <p>521 New york</p>
+                  <p>{{ "footer.contactaddress" | translate }}</p>
 
-                  <p>Contac@email.com</p>
+                  <p>{{ "footer.contactEmail" | translate }}</p>
                 </div>
               </div>
             </div>
             <div
-              class="
-                social-media social-icons
-                d-flex
-                justify-content-around
-                flex-column
-              "
+              class="social-media social-icons d-flex justify-content-around flex-column"
             >
               <a>
                 <i class="fab fa-facebook-f"></i>
@@ -76,48 +79,58 @@
               (ngSubmit)="subscribe()"
               class="letter flex donation-form"
             >
-              <span> News Letter Through </span>
+              <div class="newsLetter">
+                <span> {{ "footer.newsLetter" | translate }} </span>
 
-              <section class="radioBtns">
-                <div class="radiobtn">
-                  <input
-                    type="radio"
-                    required
-                    id="huey"
-                    formControlName="type"
-                    value="email"
-                    checked
-                  />
-                  <label for="huey">Email</label>
-                </div>
+                <section class="radioBtns">
+                  <div class="radiobtn">
+                    <input
+                      type="radio"
+                      required
+                      id="huey"
+                      formControlName="type"
+                      value="email"
+                      checked
+                    />
+                    <label for="huey">
+                      {{ "general.formEmail" | translate }}</label
+                    >
+                  </div>
 
-                <div class="radiobtn">
-                  <input
-                    type="radio"
-                    required
-                    id="dewey"
-                    formControlName="type"
-                    value="whatsapp"
-                  />
-                  <label for="dewey">Whatsapp</label>
-                </div>
+                  <div class="radiobtn">
+                    <input
+                      type="radio"
+                      required
+                      id="dewey"
+                      formControlName="type"
+                      value="whatsapp"
+                    />
+                    <label for="dewey"
+                      >{{ "footer.whatsapp" | translate }}
+                    </label>
+                  </div>
 
-                <div class="radiobtn">
-                  <input
-                    type="radio"
-                    required
-                    id="louie"
-                    formControlName="type"
-                    value="telegram"
-                  />
-                  <label for="louie">Telegram</label>
-                </div>
-              </section>
+                  <div class="radiobtn">
+                    <input
+                      type="radio"
+                      required
+                      id="louie"
+                      formControlName="type"
+                      value="telegram"
+                    />
+                    <label for="louie"
+                      >{{ "footer.telegram" | translate }}
+                    </label>
+                  </div>
+                </section>
+              </div>
 
               <div class="subscribe">
                 <div class="field">
                   <mat-form-field appearance="outline">
-                    <mat-label>Enter Your Email</mat-label>
+                    <mat-label
+                      >{{ "general.formEmail" | translate }}
+                    </mat-label>
 
                     <input
                       formControlName="email"
@@ -130,7 +143,7 @@
                   </mat-form-field>
 
                   <button type="submit" [disabled]="!subscribeForm.valid">
-                    Subscribe
+                    {{ "footer.subscribe" | translate }}
                   </button>
                 </div>
               </div>

@@ -1,7 +1,7 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { CommonModule } from "@angular/common";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { NgModule } from "@angular/core";
+import { APP_INITIALIZER, NgModule } from "@angular/core";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 
@@ -31,8 +31,29 @@ import { MatTabsModule } from "@angular/material/tabs";
 import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClient, HttpClientModule } from "@angular/common/http";
+import { TranslateLoader, TranslateModule, TranslateService } from "@ngx-translate/core";
+import { catchError } from "rxjs/internal/operators/catchError";
+import { of } from "rxjs";
+import { TranslateHttpLoader } from "@ngx-translate/http-loader";
+export function initApp(http: HttpClient, translate: TranslateService) {
+  return () =>
+    new Promise<boolean>((resolve: (res: boolean) => void) => {
+      const defaultLocale = "en";
 
+      http
+        .get(`/assets/i18n/en.json`)
+        .pipe(catchError(() => of(null)))
+        .subscribe((devKeys: any) => {
+          translate.setTranslation(defaultLocale, devKeys || {});
+
+          translate.setDefaultLang(defaultLocale);
+          translate.use(defaultLocale);
+
+          resolve(true);
+        });
+    });
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -72,11 +93,24 @@ import { HttpClientModule } from "@angular/common/http";
     MatStepperModule,
     MatTabsModule,
     CdkSelectionModule,
-    MatProgressSpinnerModule ,
-
+    MatProgressSpinnerModule,
+    TranslateModule.forRoot({
+      loader: {provide: TranslateLoader, useFactory: HttpLoaderFactory, deps: [HttpClient]}
+}),
   ],
   exports: [MatInputModule],
-  providers: [],
+  providers: [
+    {
+      provide: APP_INITIALIZER,
+      useFactory: initApp,
+      deps: [HttpClient, TranslateService],
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
+// required for AOT compilation
+export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
+  return new TranslateHttpLoader(http);
+}

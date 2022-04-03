@@ -14,7 +14,7 @@ const httpOptions = {
   providedIn: "root",
 })
 export class ConfigService {
-  configUrl = "http://137.184.108.244:8081/index.php/api";
+  configUrl = "http://128.199.36.173:8080/api";
 
   constructor(private http: HttpClient) {}
   PostDoner(hero: any): Observable<any> {

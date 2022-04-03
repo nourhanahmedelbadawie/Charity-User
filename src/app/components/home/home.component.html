@@ -6,8 +6,8 @@
       <div class="col-md-12">
         <div class="doner flex justify-content-between align-items-center">
           <div>
-            <p class="color-pri">Make a Donation</p>
-            <h4>Become a Doner</h4>
+            <p class="color-pri">{{ "home.BecomeDoner" | translate }}</p>
+            <h4>{{ "home.makeDonation" | translate }}</h4>
           </div>
           <form
             [formGroup]="makeDonationForm"
@@ -15,7 +15,7 @@
             (ngSubmit)="sendDonar()"
           >
             <mat-form-field appearance="outline">
-              <mat-label>Donar Name</mat-label>
+              <mat-label>{{ "general.formName" | translate }}</mat-label>
 
               <input
                 formControlName="name"
@@ -27,7 +27,7 @@
             </mat-form-field>
 
             <mat-form-field appearance="outline">
-              <mat-label>Enter Your Email</mat-label>
+              <mat-label>{{ "general.formEmail" | translate }}</mat-label>
 
               <input
                 formControlName="email"
@@ -40,7 +40,7 @@
             </mat-form-field>
 
             <button type="submit" [disabled]="!makeDonationForm.valid">
-              Make A Donation
+              {{ "home.makeDonation" | translate }}
             </button>
           </form>
         </div>
@@ -53,12 +53,12 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-sm-12">
-        <h2>About us</h2>
-        <h4 class="text-capitalize color-sec mb-40">
+        <h2 class="text-right-ar">{{ "home.AboutUs" | translate }}</h2>
+        <h4 class="text-capitalize color-sec mb-40 text-right-ar">
           {{ homeStaticData?.AboutUsSection?.title }}
         </h4>
 
-        <p>
+        <p class="text-right-ar">
           {{ homeStaticData?.AboutUsSection?.body }}
         </p>
       </div>
@@ -81,19 +81,19 @@
 <section class="home-sec4 mb-40">
   <div class="container">
     <div class="row">
-      <h2 class="text-center">Last achievemnt</h2>
+      <h2 class="text-center">{{ "home.lastAchievemnt" | translate }}</h2>
 
       <div>
         <div>
           <div *ngFor="let item of achievementData | slice: -3">
             <img src="{{ baseUrl + item.cover_path }}" />
-            <h4>
+            <h4 class="text-right-ar">
               {{ item.title }}
             </h4>
-            <p>
+            <p class="text-right-ar">
               {{ item.body }}
             </p>
-            <a routerLink="/achievement/{{ item.id }}">See More</a>
+            <a class="text-right-ar" routerLink="/achievement/{{ item.id }}">See More</a>
           </div>
         </div>
       </div>
@@ -104,8 +104,8 @@
   <div class="container">
     <div class="row">
       <div>
-        <p class="color-pri">Join Us</p>
-        <h4>Become a Volunteer</h4>
+        <p class="color-pri">{{ "home.JoinUs" | translate }}</p>
+        <h4>{{ "home.BecomeaVolunteer" | translate }}</h4>
       </div>
     </div>
     <div class="row">
@@ -119,7 +119,7 @@
             class="field mb-3 flex justify-content-around align-items-center"
           >
             <mat-form-field appearance="outline">
-              <mat-label>Enter Full Name </mat-label>
+              <mat-label>{{ "footer.newsLetter" | translate }} </mat-label>
 
               <input
                 formControlName="name"
@@ -131,7 +131,7 @@
             </mat-form-field>
 
             <mat-form-field appearance="outline">
-              <mat-label>Enter Your Email</mat-label>
+              <mat-label>{{ "general.formEmail" | translate }}</mat-label>
 
               <input
                 formControlName="email"
@@ -148,7 +148,7 @@
             class="field mb-3 flex justify-content-around align-items-center"
           >
             <mat-form-field appearance="outline">
-              <mat-label>Enter Phone </mat-label>
+              <mat-label>{{ "general.formPhone" | translate }}</mat-label>
 
               <input
                 formControlName="phone"
@@ -160,7 +160,7 @@
             </mat-form-field>
 
             <mat-form-field appearance="outline">
-              <mat-label>Enter Your Region</mat-label>
+              <mat-label>{{ "general.formRegion" | translate }}</mat-label>
 
               <input
                 formControlName="region"
@@ -174,16 +174,19 @@
           <div
             class="field mb-3 m-auto flex justify-content-center align-items-center select"
           >
-       
-
             <mat-form-field appearance="fill">
-              <mat-label>What do you want to volunteer?</mat-label>
+              <mat-label>
+                {{ "home.wantBecomeaVolunteer" | translate }}
+              </mat-label>
               <mat-select
                 formControlName="activity"
                 matInput=""
                 placeholder="What do you want to volunteer?"
               >
-                <mat-option *ngFor="let activity of activities" [value]="activity">
+                <mat-option
+                  *ngFor="let activity of activities"
+                  [value]="activity"
+                >
                   {{ activity }}
                 </mat-option>
               </mat-select>
@@ -191,7 +194,7 @@
           </div>
 
           <button type="submit" [disabled]="!makeVolunteerForm.valid">
-            Join US Now
+            {{ "home.JoinUsNow" | translate }}
           </button>
         </form>
       </div>

@@ -87,7 +87,6 @@
           <form
             [formGroup]="profileForm"
             class="form-container"
-            (ngSubmit)="sendProfileForm()"
           >
             <div class="row">
               <div class="col-md-6">
@@ -284,9 +283,8 @@
 
         <button mat-button matStepperPrevious>Back</button>
         <mat-card-actions>
-          <button (click)="onSubmit()" class="btn">Save</button>
+          <button  class="btn">Save</button>
         </mat-card-actions>
-      </mat-step>
-    </mat-horizontal-stepper>
+      </mat-step>    </mat-horizontal-stepper>
   </section>
 </div>

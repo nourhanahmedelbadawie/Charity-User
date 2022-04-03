@@ -31,28 +31,40 @@
             >
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                  <a class="nav-link active" routerLink="/">Home</a>
+                  <a class="nav-link active" routerLink="/">{{ "nav.home" | translate }} </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" routerLink="/about">About</a>
+                  <a class="nav-link" routerLink="/about">{{ "nav.aboutus" | translate }}</a>
                 </li>
                 <li class="nav-item">
                   <a
                     class="nav-link active"
                     aria-current="page"
                     routerLink="/contact"
-                    >Contact us
+                    >{{ "nav.contactUs" | translate }}
                   </a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#" routerLink="/document"
-                    >Documents</a
+                    >{{ "nav.documents" | translate }}</a
                   >
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#" routerLink="/partners"
-                    >Partners</a
+                    >{{ "nav.partners" | translate }}</a
                   >
+                </li>
+                <li>
+                  <a
+                    class="lang"
+                    (click)="useLanguage('ar')"
+                    *ngIf="ar; else en"
+                    >العربيه</a
+                  >
+
+                  <ng-template #en>
+                    <a class="lang" (click)="useLanguage('en')">English</a>
+                  </ng-template>
                 </li>
               </ul>
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -61,7 +73,7 @@
                 </li>
                 <li class="nav-item">
                   <a routerLink="/donation" class="btn nav-link donation"
-                    >Make A Donation</a
+                    >{{ "home.makeDonation" | translate }}</a
                   >
                 </li>
               </ul>
@@ -73,7 +85,7 @@
         <div class="row">
           <div class="breadcrumb">
             <p>
-              <a class="nav-link" routerLink="/">Home</a> <span> ></span>
+              <a class="nav-link" routerLink="/">{{ "nav.home" | translate }}</a> <span> </span>
               {{ breadcrumb.title }}
             </p>
 
@@ -87,7 +99,6 @@
       </div>
     </div>
   </section>
-
 
   <ng-template #breadcrumbHome>
     <!-- // casolu -->
@@ -118,28 +129,40 @@
               >
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <a class="nav-link active" routerLink="/">Home</a>
+                    <a class="nav-link active" routerLink="/">{{ "nav.home" | translate }}</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" routerLink="/about">About</a>
+                    <a class="nav-link" routerLink="/about">{{ "nav.aboutus" | translate }}</a>
                   </li>
                   <li class="nav-item">
                     <a
                       class="nav-link active"
                       aria-current="page"
                       routerLink="/contact"
-                      >Contact us
+                      >{{ "nav.contactUs" | translate }}
                     </a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="#" routerLink="/document"
-                      >Documents</a
+                      >{{ "nav.documents" | translate }}</a
                     >
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="#" routerLink="/partners"
-                      >Partners</a
+                      >{{ "nav.partners" | translate }}</a
                     >
+                  </li>
+                  <li>
+                    <a
+                      class="lang nav-link"
+                      (click)="useLanguage('ar')"
+                      *ngIf="ar; else en"
+                      >العربيه</a
+                    >
+
+                    <ng-template #en>
+                      <a class="lang nav-link" (click)="useLanguage('en')">English</a>
+                    </ng-template>
                   </li>
                 </ul>
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -148,7 +171,7 @@
                   </li>
                   <li class="nav-item">
                     <a routerLink="/donation" class="btn nav-link donation"
-                      >Make A Donation</a
+                      >{{ "home.makeDonation" | translate }}</a
                     >
                   </li>
                 </ul>
@@ -207,26 +230,18 @@
         data-interval="1000"
         wrap="true"
       >
-     
         <div class="carousel-inner">
           <div class="carousel-item active">
-
-            <img
-            src="{{ baseUrl + breadcrumb.bg[0] }}"
-          />
+            <img src="{{ baseUrl + breadcrumb.bg[0] }}" />
           </div>
 
           <div class="carousel-item" id="slide2">
-            <img
-            src="{{ baseUrl + breadcrumb.bg[1] }}"
-          />
+            <img src="{{ baseUrl + breadcrumb.bg[1] }}" />
           </div>
 
           <div class="carousel-item" id="slide3">
-
-            <img
-            src="{{ baseUrl + breadcrumb.bg[2] }}"
-          />          </div>
+            <img src="{{ baseUrl + breadcrumb.bg[2] }}" />
+          </div>
         </div>
       </div>
     </div>
