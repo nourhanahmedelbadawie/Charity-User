@@ -60,7 +60,6 @@ export class AboutComponent implements OnInit {
   chooseContent: number = 0;
   
   setChooseContent(i) {
-    console.log(i);
     this.chooseContent = i;
   }
 }

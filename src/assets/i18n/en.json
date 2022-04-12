@@ -1,9 +1,9 @@
 {
     "nav": {
-        "home":"Home",
+        "home": "Home",
         "aboutus": "About Us",
-        "documents":"Documents",
-        "partners":"Partners",
+        "documents": "Documents",
+        "partners": "Partners",
         "contactUs": "Contact Us"
     },
     "home": {
@@ -16,13 +16,22 @@
         "JoinUs": "Join Us",
         "JoinUsNow": "  Join US Now",
         "wantBecomeaVolunteer": "What do you want to volunteer?",
-        "BecomeaVolunteer": "Become a Volunteer"
+        "BecomeaVolunteer": "Become a Volunteer" ,
+        "seeMore":"See more"
     },
     "general": {
         "formName": "Name",
         "formEmail": "Email",
         "formPhone": "Phone",
-        "formRegion": "Regoin"
+        "formRegion": "Regoin",
+        "formSubject": "Subject",
+        "formMessage": "Message",
+        "formSubmit": "Submit",
+        "formNext": "Next",
+        "department": "Department" ,
+        "formAmount":"Amount",
+        "formBack":"Back" ,
+        "formSave":"Save"
     },
     "footer": {
         "footerTxt": "lorem",
@@ -34,9 +43,34 @@
         "contactName": "test test",
         "contactaddress": "12 test test",
         "contactEmail": "test@gmail.com"
+    },
+    "about": {
+        "Whychooseus": "Why choose us"
+    },
+    "contactUs": {
+        "title": " Contact Us",
+        "getInTouch": "Get In Touch",
+        "subTitle": "Lorem ipsum lorem ipsum ",
+        "phone": "Phone",
+        "location": "Location",
+        "email": "Email"
+    },
+    "docs": {
+        "download": "Download",
+        "downloadDocument": "Download document"
+    },
+    "partners": {
+        "title": "Our partners"
+    },
+    "donation": {
+        "achivemntTitle": "Our New Achivement",
+        "subtitle": " Charity to change child's and poor peaple life",
+        "text":"Lorem Ipsum is simply dummy text of the printing and typesetting industry." ,
+        "goal": "Goal",
+        "recived": "Recived",
+        "need": "Need" ,
+        "paymentSelection":"Payment Selection" ,
+        "paymentInformation":"payment Information"
+
     }
-    ,
-     "about" : {
-         "Whychooseus" :"Why choose us"
-     }
 }

@@ -4,21 +4,16 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6">
-        <h3>Our New Achivement</h3>
+        <h3 class="text-right-ar">
+          {{ "donation.achivemntTitle" | translate }}
+        </h3>
 
-        <h4 class="text-capitalize color-sec mb-40">
-          Charity to change child's and poor peaple life
+        <h4 class="text-capitalize text-right-ar color-sec mb-40">
+          {{ "donation.subtitle" | translate }}
         </h4>
 
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-          Reprehenderit doloribus dolor quidem perspiciatis iste quam deserunt
-          tenetur rerum fugiat blanditiis. Dolor officiis optio voluptas tempore
-          vero omnis facere laudantium voluptatem.Lorem ipsum dolor, sit amet
-          consectetur adipisicing elit. Reprehenderit doloribus dolor quidem
-          perspiciatis iste quam deserunt tenetur rerum fugiat blanditiis. Dolor
-          officiis optio voluptas tempore vero omnis facere laudantium
-          voluptatem.
+        <p class="text-right-ar">
+          {{ "donation.text" | translate }}
         </p>
       </div>
       <div class="col-md-6">
@@ -63,35 +58,37 @@
     <div class="goal flex">
       <p>
         <img src="../../../assets/images/donation/goal.png" />
-        <span>Goal</span>450$<span class="border"></span>
+        <span> {{ "donation.goal" | translate }} </span>450$<span
+          class="border"
+        ></span>
       </p>
 
       <p>
         <img src="../../../assets/images/donation/Recived.png" />
-        <span>Recived</span>300$<span class="border"></span>
+        <span class="m-1"> {{ "donation.recived" | translate }}</span
+        >300$<span class="border"></span>
       </p>
 
       <p>
         <img src="../../../assets/images/donation/need.png" />
-        <span>Need</span>300$
+        <span class="m-1"> {{ "donation.need" | translate }}</span
+        >300$
       </p>
     </div>
   </div>
   <section class="donation-form mb-40">
-    <p>Join us</p>
-    <h3>Make a Donation</h3>
+    <p class="text-right-ar">{{ "home.JoinUs" | translate }}</p>
+    <h3 class="text-right-ar">{{ "home.JoinUsNow" | translate }}</h3>
 
     <mat-horizontal-stepper>
-      <mat-step label="Personal information">
+      <mat-step label="{{ 'donation.paymentInformation' | translate }}"
+        >
         <mat-card>
-          <form
-            [formGroup]="profileForm"
-            class="form-container"
-          >
+          <form [formGroup]="profileForm" class="form-container">
             <div class="row">
               <div class="col-md-6">
                 <mat-form-field appearance="outline">
-                  <mat-label>Full name</mat-label>
+                  <mat-label>{{ "general.formName" | translate }}</mat-label>
 
                   <input
                     formControlName="name"
@@ -102,7 +99,7 @@
               </div>
               <div class="col-md-6">
                 <mat-form-field appearance="outline">
-                  <mat-label>Email</mat-label>
+                  <mat-label>{{ "general.formEmail" | translate }}</mat-label>
 
                   <input
                     formControlName="email"
@@ -115,7 +112,7 @@
             <div class="row">
               <div class="col-md-6">
                 <mat-form-field appearance="outline">
-                  <mat-label>Phone</mat-label>
+                  <mat-label>{{ "general.formName" | translate }}</mat-label>
 
                   <input
                     formControlName="phone"
@@ -126,7 +123,7 @@
               </div>
               <div class="col-md-6">
                 <mat-form-field appearance="outline">
-                  <mat-label>Phone</mat-label>
+                  <mat-label>{{ "general.formPhone" | translate }}</mat-label>
 
                   <input
                     formControlName="phone1"
@@ -137,13 +134,13 @@
               </div>
             </div>
             <button type="submit" mat-button matStepperNext class="btn">
-              Next
+              {{ "general.formNext" | translate }}
             </button>
           </form>
         </mat-card>
       </mat-step>
 
-      <mat-step label="Payment Selection">
+      <mat-step label="{{ 'donation.paymentSelection' | translate }}">
         <div class="payment-selection">
           <mat-tab-group>
             <mat-tab label="">
@@ -155,7 +152,9 @@
                     (ngSubmit)="sendDonationForm()"
                   >
                     <mat-form-field appearance="fill">
-                      <mat-label>Department</mat-label>
+                      <mat-label>
+                        {{ "general.department" | translate }}</mat-label
+                      >
                       <mat-select formControlName="department_id">
                         <mat-option
                           *ngFor="let deparment of allDepartment"
@@ -166,7 +165,9 @@
                       </mat-select>
                     </mat-form-field>
                     <mat-form-field appearance="outline">
-                      <mat-label>Amount</mat-label>
+                      <mat-label>
+                        {{ "general.formAmount" | translate }}</mat-label
+                      >
 
                       <input
                         formControlName="amount"
@@ -176,7 +177,9 @@
                         required
                       />
                     </mat-form-field>
-                    <button type="=" submit class="main-btn">submit</button>
+                    <button type="=" submit class="main-btn">
+                      {{ "general.formSubmit" | translate }}
+                    </button>
                   </form>
                 </mat-card>
               </div>
@@ -253,7 +256,9 @@
                     </mat-form-field>
                   </div>
                 </div>
-                <button type="button" mat-button matStepperNext>Next</button>
+                <button type="button" mat-button matStepperNext>
+                  {{ "general.formNext" | translate }}
+                </button>
               </form>
             </mat-tab>
             <mat-tab label=""> Content 3 </mat-tab>
@@ -263,7 +268,9 @@
                   <div class="row">
                     <div class="flex align-items-center">
                       <mat-form-field appearance="outline">
-                        <mat-label>Full name</mat-label>
+                        <mat-label>
+                          {{ "general.formName" | translate }}
+                        </mat-label>
 
                         <input
                           formControlName="name"
@@ -281,10 +288,13 @@
           </mat-tab-group>
         </div>
 
-        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperPrevious>
+          {{ "general.formBack" | translate }}
+        </button>
         <mat-card-actions>
-          <button  class="btn">Save</button>
+          <button class="btn">{{ "general.formSave" | translate }}</button>
         </mat-card-actions>
-      </mat-step>    </mat-horizontal-stepper>
+      </mat-step>
+    </mat-horizontal-stepper>
   </section>
 </div>

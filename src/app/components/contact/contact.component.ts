@@ -34,12 +34,10 @@ export class ContactComponent implements OnInit {
 
  
   sendcontactForm(){
-    console.log(this.contactForm.value)
     this.configService.contactUS( JSON.stringify(this.contactForm.value))
     .subscribe((data: any) =>()=>{
       this.contactForm .reset()
 
-      console.log(data)
       Swal.fire({
         title: 'success',
         text: 'Send successfuly',

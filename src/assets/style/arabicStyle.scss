@@ -24,6 +24,7 @@ form {
 .mat-form-field-appearance-outline .mat-form-field-infix{
     text-align: right;
 }
+.carousel-indicators{right: 0% !important; left: 16% !important;}
 // footer
 
 .newsLetter{
@@ -34,6 +35,9 @@ form {
     > .subscribe{
         order:-1
     }
+}
+.radioBtns{
+    order : -1
 }
 
 

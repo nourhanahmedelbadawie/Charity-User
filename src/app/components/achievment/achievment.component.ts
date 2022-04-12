@@ -22,7 +22,6 @@ export class AchievmentComponent implements OnInit {
      this.getStaticDataService.getOneAchData(this.route.snapshot.paramMap.get('id')
      ).subscribe(data=>{
       this.achievementData= (data)
-      console.log(this.achievementData)
     
   
     })

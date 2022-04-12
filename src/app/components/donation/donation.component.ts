@@ -31,7 +31,6 @@ export class DonationComponent implements OnInit {
   ) {
     this.getStaticDataService.getAllDepartment().subscribe((res) => {
       this.allDepartment = res;
-      console.log(this.allDepartment);
     });
   }
 
@@ -64,7 +63,6 @@ export class DonationComponent implements OnInit {
   allSelected = ["yellow", "blue", "green", "pink", "red"];
 
   onSelectionChange(ev) {
-    console.log("Change", ev);
   }
 
   trackBy(model) {

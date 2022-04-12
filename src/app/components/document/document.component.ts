@@ -35,11 +35,9 @@ export class DocumentComponent implements OnInit {
 
     this.getStaticDataService.getDocPageStaticData().subscribe((res) => {
       this.DocStaticData = res.data;
-      console.log(this.DocStaticData);
     });
     this.getStaticDataService.getDocData().subscribe((data) => {
       this.files = data;
-      console.log(data);
     });
 
     this.currentbreadcrumb = {
