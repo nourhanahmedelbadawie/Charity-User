@@ -6,11 +6,11 @@
     <div class="row">
       <section class="responsive-doc flex about-first-sec align-items-md-start">
         <div>
-          <h4 class="text-capitalize color-sec mb-40">
+          <h4 class="text-capitalize text-right-ar color-sec mb-40">
             {{ DocStaticData.title }}
           </h4>
 
-          <p>
+          <p class="text-right-ar">
             {{ DocStaticData.intro }}
           </p>
         </div>
@@ -31,14 +31,16 @@
       >
         <div class="col-md-12 col-sm-12 d-flex" *ngIf="i % 2 === 0">
           <div class="col-md-6 col-sm-12">
-            <h4>{{ item.title }}</h4>
-            <p>
+            <h4 class="text-right-ar">{{ item.title }}</h4>
+            <p class="text-right-ar">
               {{ item.intro }}
             </p>
             <div class="flex align-items-center mb-2">
               <img src="../../../assets/images/documents/pdf.png" />
-              <h4>{{ item.title }}</h4>
-              <a (click)="setDocumentDownloaded(item)"> Download </a>
+              <h4 class="m-1">{{ item.title }}</h4>
+              <a class="m-1" (click)="setDocumentDownloaded(item)">
+                {{ "docs.download" | translate }}
+              </a>
             </div>
           </div>
 
@@ -66,7 +68,9 @@
               <!-- <a href="{{ baseUrl + item.file_path }}" target="_blank"
                 >
               </a> -->
-              <a (click)="setDocumentDownloaded(item)"> Download </a>
+              <a (click)="setDocumentDownloaded(item)">
+                {{ "docs.download" | translate }}
+              </a>
             </div>
           </div>
         </div>
@@ -78,7 +82,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLongTitle">
-            Download document
+            {{ "docs.downloadDocument" | translate }}
           </h5>
           <button type="button" (click)="viewModal = close">
             <span aria-hidden="true">&times;</span>
@@ -92,7 +96,7 @@
           <div class="modal-body">
             <div>
               <div class="form-group">
-                <label>Name </label>
+                <label> {{ "general.formName" | translate }}</label>
                 <input
                   formControlName="name"
                   matInput=""
@@ -104,7 +108,9 @@
               </div>
 
               <div class="form-group">
-                <label for="exampleInputEmail1">Email </label>
+                <label for="exampleInputEmail1"
+                  >{{ "general.formEmail" | translate }}
+                </label>
                 <input
                   formControlName="email"
                   matInput=""
@@ -120,7 +126,7 @@
               </div>
 
               <div class="form-group">
-                <label>Phone Number </label>
+                <label>{{ "general.formPhone" | translate }} </label>
                 <input
                   formControlName="phone"
                   formControlName="phone"

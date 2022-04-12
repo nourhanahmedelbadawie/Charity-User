@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { MatFormFieldControl } from "@angular/material";
+import { TranslateService } from "@ngx-translate/core";
 import { ConfigService } from "../../config/config.service";
 import { GetStaticDataService } from "../../config/get-static-data.service";
 
@@ -10,12 +11,6 @@ import { GetStaticDataService } from "../../config/get-static-data.service";
   styleUrls: ["./donation.component.scss"],
 })
 export class DonationComponent implements OnInit {
-  currentbreadcrumb: {} = {
-    title: "Donation",
-    subtitle: "lorem ipsum",
-    bg: "../../../assets/images/about/about_manner.jpg",
-    link: "/doc",
-  };
 
   isLinear = false;
   firstFormGroup: FormGroup;
@@ -27,13 +22,21 @@ export class DonationComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private configService: ConfigService,
-    private getStaticDataService: GetStaticDataService
+    private getStaticDataService: GetStaticDataService ,
+    private translate: TranslateService
+
   ) {
     this.getStaticDataService.getAllDepartment().subscribe((res) => {
       this.allDepartment = res;
-      console.log(this.allDepartment);
     });
   }
+  currentbreadcrumb: {} = {
+    title: this.translate.instant("nav.donation")    ,
+    subtitle: this.translate.instant("nav.donation")
+    ,
+    bg: "../../../assets/images/about/about_manner.jpg",
+    link: "/doc",
+  };
 
   profileForm = this.fb.group({
     name: ["", Validators.required],
@@ -64,7 +67,6 @@ export class DonationComponent implements OnInit {
   allSelected = ["yellow", "blue", "green", "pink", "red"];
 
   onSelectionChange(ev) {
-    console.log("Change", ev);
   }
 
   trackBy(model) {

@@ -3,31 +3,32 @@
   <div class="row">
     <section class="flex getintouch">
       <div>
-        <h3 class="mb-20">Contact Us</h3>
-        <p class="mb-20 color-sec get_title">Get In Touch</p>
-        <p class="mb-40">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi magni
-          explicabo sint neque reprehenderit,
+        <h3 class="mb-20 text-right-ar">{{ "contactUs.title" | translate }}</h3>
+        <p class="mb-20 color-sec get_title text-right-ar">
+          {{ "contactUs.getInTouch" | translate }}
+        </p>
+        <p class="mb-40 text-right-ar">
+          {{ "contactUs.subTitle" | translate }}
         </p>
         <div class="icons">
           <div class="flex align-items-start">
             <img src="../../../assets/images/contact/phone.png" />
-            <p>
-              <span> Phone </span>
+            <p class="text-right-ar">
+              <span> {{ "contactUs.phone" | translate }} </span>
               +1234567890
             </p>
           </div>
           <div class="flex align-items-start">
             <img src="../../../assets/images/contact/location.png" />
-            <p>
-              <span> Location </span>
+            <p class="text-right-ar">
+              <span> {{ "contactUs.location" | translate }} </span>
               lorem , ipsum
             </p>
           </div>
           <div class="flex align-items-start">
             <img src="../../../assets/images/contact/mail.png" />
-            <p>
-              <span> Email </span>
+            <p class="text-right-ar">
+              <span> {{ "contactUs.email" | translate }} email </span>
               demo@gmail.com
             </p>
           </div>
@@ -41,7 +42,7 @@
             (ngSubmit)="sendcontactForm()"
           >
             <mat-form-field appearance="outline">
-              <mat-label>Full Name</mat-label>
+              <mat-label> {{ "general.formName" | translate }} </mat-label>
 
               <input
                 formControlName="name"
@@ -52,20 +53,19 @@
               />
             </mat-form-field>
             <mat-form-field appearance="outline">
-              <mat-label>Email</mat-label>
+              <mat-label>{{ "general.formEmail" | translate }}</mat-label>
 
               <input
                 formControlName="email"
                 matInput=""
                 placeholder="Email"
                 pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}"
-
                 type="email"
                 required
               />
             </mat-form-field>
             <mat-form-field appearance="outline">
-              <mat-label>Phone Number</mat-label>
+              <mat-label> {{ "general.formPhone" | translate }}</mat-label>
 
               <input
                 formControlName="phone"
@@ -76,9 +76,9 @@
                 maxlength="10"
               />
             </mat-form-field>
-     
+
             <mat-form-field appearance="outline">
-              <mat-label>Subject</mat-label>
+              <mat-label>{{ "general.formSubject" | translate }}</mat-label>
 
               <input
                 formControlName="subject"
@@ -88,7 +88,7 @@
               />
             </mat-form-field>
             <mat-form-field appearance="outline" class="textarea">
-              <mat-label>Message</mat-label>
+              <mat-label>{{ "general.formMessage" | translate }}</mat-label>
 
               <textarea
                 formControlName="body"
@@ -98,8 +98,8 @@
               ></textarea>
             </mat-form-field>
 
-            <button type="submit" >
-              Submit
+            <button type="submit">
+              {{ "general.formSubmit" | translate }}
             </button>
           </form>
         </mat-card>

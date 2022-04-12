@@ -93,7 +93,7 @@
             <p class="text-right-ar">
               {{ item.body }}
             </p>
-            <a class="text-right-ar" routerLink="/achievement/{{ item.id }}">See More</a>
+            <a class="text-right-ar" routerLink="/achievement/{{ item.id }}"> {{ "home.seeMore" | translate }}</a>
           </div>
         </div>
       </div>
@@ -103,9 +103,9 @@
 <section class="home-sec2 home-sec5 bg-blue mb-40">
   <div class="container">
     <div class="row">
-      <div>
-        <p class="color-pri">{{ "home.JoinUs" | translate }}</p>
-        <h4>{{ "home.BecomeaVolunteer" | translate }}</h4>
+      <div >
+        <p class="color-pri text-right-ar">{{ "home.JoinUs" | translate }}</p>
+        <h4 class="text-right-ar">{{ "home.BecomeaVolunteer" | translate }}</h4>
       </div>
     </div>
     <div class="row">
@@ -179,7 +179,7 @@
                 {{ "home.wantBecomeaVolunteer" | translate }}
               </mat-label>
               <mat-select
-                formControlName="activity"
+                formControlName="for"
                 matInput=""
                 placeholder="What do you want to volunteer?"
               >

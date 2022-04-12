@@ -4,25 +4,39 @@
         "documents":"ملفات",
         "aboutus": "نحن",
         "contactUs": "اتصل بينا",
-        "partners": "عملاء"
+        "partners": "عملاء" ,
+        "achievement" :"انجازات",
+        "donation" :"التبرعات" ,
+        "sign":">"
+
     },
     "home": {
         "header": "مرحبا",
         "description": "لوريم ",
-        "makeDonation": "تبرع",
+        "makeDonation": "تبرع الان",
         "BecomeDoner": "كون متبرع",
         "AboutUs": "نحن",
         "lastAchievemnt": "الانجازات الاخيره",
         "JoinUs": "انضم لنا",
-        "JoinUsNow": "  انضم لنا الا",
+        "JoinUsNow": "  انضم لنا الان",
         "wantBecomeaVolunteer": "هل تود ان تصبح متطوع",
-        "BecomeaVolunteer": "كون متطوع"
+        "BecomeaVolunteer": "كون متطوع" ,
+        "seeMore":"المزيد"
+
     },
     "general": {
         "formName": "الاسم",
         "formEmail": "الايميل",
         "formPhone": "المحمول",
-        "formRegion": "المنطقه"
+        "formRegion": "المنطقه" ,
+        "formSubject":"الموضوع" ,
+        "formMessage":"الرساله" ,
+        "formSubmit" : "تسجيل" ,
+        "formNext":"التالى" ,
+        "department":"قسم" ,
+        "formAmount":"كميه",
+        "formBack":"السابق" ,
+        "formSave":"حفظ"
     },
     "footer": {
         "footerTxt": "لوريم",
@@ -34,5 +48,34 @@
         "contactName": "لوريم لوريم",
         "contactaddress": "12 test test",
         "contactEmail": "test@gmail.com"
+    } ,
+    "about" : {
+        "Whychooseus" :"لماذا نحن "
+    },
+    "contactUs":{
+        "title" : "اتصل بينا" ,
+        "getInTouch":"كن عل اتصال بنا" ,
+        "subTitle":"لوريم ايبسم " ,
+        "phone":"الهاتف" ,
+        "location" :"الموقع" ,
+        "email" :"الايميل"
+    } ,
+    "docs":{
+        "title":"ملفات" ,
+        "download":"تنزيل" ,
+        "downloadDocument" :"تنزيل الملف"
+    } ,
+    "partners": {
+        "title": "عملائنا"
+    },
+    "donation": {
+        "achivemntTitle": "أنجازاتنا الجديده",
+        "subtitle": " الصدقة لتغيير حياة الطفل والفقراء" ,
+        "text" :"ريم ايبسوم هو نموذج افتراضي يوضع في التصاميم لتعرض على العميل ليتصور طريقه وضع النصوص بالتصاميم سواء كانت تصاميم مطبوعه ... بروشور او فلاير على سبيل المثال ... او نماذج مواقع انترنت" ,
+        "goal":"الهدف" ,
+        "recived" :"مستقبل" ,
+        "need" :"محتاج"
+
     }
+
 }

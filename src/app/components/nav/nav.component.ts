@@ -13,9 +13,11 @@ export class NavComponent implements OnInit {
   constructor(private translate: TranslateService) {
     translate.setDefaultLang("en");
   }
+
   ngOnInit() {
-    console.log(this.breadcrumb);
+
   }
+ 
   ar: boolean = true;
   useLanguage(language: string): void {
     this.ar = !this.ar;

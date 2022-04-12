@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
+import { TranslateService } from "@ngx-translate/core";
 import { GetStaticDataService } from "src/app/config/get-static-data.service";
 import { baseUrl } from "../../../environments/environment";
 
@@ -17,22 +18,25 @@ export class AboutComponent implements OnInit {
     bg: string;
     link: string;
   };
-  choose: { title: any; num: string; content: any; }[];
+  choose: { title: any; num: string; content: any }[];
 
-  constructor(private getStaticDataService: GetStaticDataService) {}
+  constructor(
+    private getStaticDataService: GetStaticDataService,
+    private translate: TranslateService
+  ) {}
 
   ngOnInit() {
-
     this.getStaticDataService.getAboutData().subscribe((data) => {
       this.aboutData = data;
 
       this.currentbreadcrumb = {
-        title: "about",
-        subtitle: "about",
+        title: this.translate.instant("nav.aboutus"),
+        subtitle: this.translate.instant("nav.aboutus"),
+
         bg: `${baseUrl}${this.aboutData.AboutUsMain.cover_path}`,
         link: "/about",
       };
-      this.choose= [
+      this.choose = [
         {
           title: this.aboutData.AboutUsWhyChooseUs01.title,
           num: "01",
@@ -58,9 +62,8 @@ export class AboutComponent implements OnInit {
   }
 
   chooseContent: number = 0;
-  
+
   setChooseContent(i) {
-    console.log(i);
     this.chooseContent = i;
   }
 }

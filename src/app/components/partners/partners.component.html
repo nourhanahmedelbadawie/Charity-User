@@ -3,8 +3,8 @@
 <section class="about-first-sec mb-80 mt-4 sec">
   <div class="container">
     <div class="row">
-      <div class="col-md-11">
-        <h3>Our Partner</h3>
+      <div class="col-md-11 text-right-ar">
+        <h3>{{ "partners.title" | translate }} </h3>
 
     
 
@@ -15,10 +15,18 @@
       </div>
       <div class="col-md-1">
         <div class="icon mt-2">
-          <img
-            class="about_icon"
-            src="../../../assets/images/about/about_icon.png"
-          />
+          <div class="phone-icon-container">
+          <div class="phone-icon">
+            <div class="text-center">
+              <a href="#">
+                <div class="btn">
+                  <i class="ico"></i>
+                  <span>0123456787</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
         </div>
       </div>
     </div>
@@ -107,10 +115,11 @@
 </div> -->
 
 
-  <div class="container">
-    <div class="row">
-      <div class="logos">
-      <div class="logo_company" *ngFor="let item of PartnertDataInfo; let index=index">
+
+      <div class="logos  mb-80">
+        <div class="container">
+          <div class="row">
+      <div class="logo_company col-md-6" *ngFor="let item of PartnertDataInfo; let index=index">
         <img src="{{ baseUrl +  item.company_name }}"   />
     
       </div>

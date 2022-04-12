@@ -41,11 +41,9 @@ email:  ['',[Validators.required, Validators.email]],
 
 
 subscribe(){
-  console.log( this.subscribeForm.value)
   this.configService.subscribe( JSON.stringify(this.subscribeForm.value))
     .subscribe((data: any) =>{
       this.subscribeForm.reset()
-      console.log(data)
           Swal.fire({
           title: 'success',
           text: 'Send successfuly',

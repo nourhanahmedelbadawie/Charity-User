@@ -4,6 +4,7 @@ import { baseUrl } from "../../../environments/environment";
 import { FormBuilder, Validators } from "@angular/forms";
 import Swal from "sweetalert2";
 import { ConfigService } from "../../config/config.service";
+import { TranslateService } from "@ngx-translate/core";
 
 @Component({
   selector: "app-document",
@@ -27,7 +28,8 @@ export class DocumentComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private getStaticDataService: GetStaticDataService,
-    private configService: ConfigService
+    private configService: ConfigService,
+    private translate: TranslateService
   ) {}
 
   ngOnInit() {
@@ -35,20 +37,18 @@ export class DocumentComponent implements OnInit {
 
     this.getStaticDataService.getDocPageStaticData().subscribe((res) => {
       this.DocStaticData = res.data;
-      console.log(this.DocStaticData);
+      this.currentbreadcrumb = {
+        title: this.translate.instant("docs.title"),
+        subtitle: this.translate.instant("docs.title"),
+        bg: `${baseUrl}${this.DocStaticData.cover_path}`,
+        link: "/doc",
+      };
     });
     this.getStaticDataService.getDocData().subscribe((data) => {
       this.files = data;
-      console.log(data);
     });
-
-    this.currentbreadcrumb = {
-      title: "Document",
-      subtitle: "Document",
-      bg: `${baseUrl}${this.DocStaticData.cover_path}`,
-      link: "/doc",
-    };
   }
+
   // download pdf
   setDocumentDownloaded(item) {
     this.documentDownloaded = item;

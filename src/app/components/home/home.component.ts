@@ -73,10 +73,9 @@ export class HomeComponent implements OnInit {
     email: ["", [Validators.required, Validators.email]],
     phone: ["", Validators.required],
     region: ["", Validators.required],
-    activity: ["", Validators.required],
+    for: ["", Validators.required],
   });
   sendDonar() {
-    console.log(this.makeDonationForm.valid);
     this.configService
       .PostDoner(JSON.stringify(this.makeDonationForm.value))
 
@@ -105,13 +104,11 @@ export class HomeComponent implements OnInit {
   }
 
   sendVolunteer() {
-    console.log(this.makeVolunteerForm.value);
     this.configService
       .PostVolunteer(JSON.stringify(this.makeVolunteerForm.value))
       .subscribe(
         (data: any) => {
           this.makeVolunteerForm.reset();
-          console.log(data);
           Swal.fire({
             title: "success",
             text: "Send successfuly",
