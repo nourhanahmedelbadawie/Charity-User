@@ -15,7 +15,6 @@ export class NavComponent implements OnInit {
   }
 
   ngOnInit() {
-
   }
  
   ar: boolean = true;
