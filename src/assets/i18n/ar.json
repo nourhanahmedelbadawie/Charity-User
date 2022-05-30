@@ -3,7 +3,7 @@
         "home":"الرئيسيه",
         "documents":"ملفات",
         "aboutus": "نحن",
-        "contactUs": "اتصل بينا",
+        "contactUs": "تواصل معنا",
         "partners": "عملاء" ,
         "achievement" :"انجازات",
         "donation" :"التبرعات" ,
@@ -14,13 +14,13 @@
         "header": "مرحبا",
         "description": "لوريم ",
         "makeDonation": "تبرع الان",
-        "BecomeDoner": "كون متبرع",
+        "BecomeDoner": "ساهم معنا",
         "AboutUs": "نحن",
         "lastAchievemnt": "الانجازات الاخيره",
         "JoinUs": "انضم لنا",
         "JoinUsNow": "  انضم لنا الان",
-        "wantBecomeaVolunteer": "هل تود ان تصبح متطوع",
-        "BecomeaVolunteer": "كون متطوع" ,
+        "wantBecomeaVolunteer": "مجالات التطوع ",
+        "BecomeaVolunteer": "تطوع معنا" ,
         "seeMore":"المزيد"
 
     },
@@ -53,7 +53,7 @@
         "Whychooseus" :"لماذا نحن "
     },
     "contactUs":{
-        "title" : "اتصل بينا" ,
+        "title" : "تواصل معنا" ,
         "getInTouch":"كن عل اتصال بنا" ,
         "subTitle":"لوريم ايبسم " ,
         "phone":"الهاتف" ,
